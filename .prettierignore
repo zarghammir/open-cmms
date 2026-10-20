@@ -1,0 +1,14 @@
+.next
+node_modules
+playwright-report
+test-results
+blob-report
+coverage
+package-lock.json
+docs/screenshots
+
+# Import fixtures are sample data: they must stay byte-for-byte what the
+# importer sees, so Prettier does not reflow them. Fixture *code* is still
+# formatted.
+tests/fixtures/*.md
+tests/fixtures/*.csv

@@ -1,0 +1,81 @@
+EQUIP_NO,EQUIP_DESC,LOCATION,MFG,MODEL,SERIAL_NO,INSTALL_DATE,STATUS,CRITICALITY
+AHU-KGN-01,Air Handling Unit,KGN-B02-219,Norvent Systems,NS-6199R,P52B-57768,2007-10-16,A,H
+ELV-SUD-01,"Elevator, Passenger",SUD-B02-129,Liftech Elevator,LE-8182V,E61S-66293,2020-01-12,A,H
+ULF-MCT-01,"Ultra-Low Freezer, -80C",MCT-B03-290,CryoNorth Scientific,CS-8722G,R36X-79517,2002-07-06,A,C
+EWS-KAM-01,Emergency Eyewash and Shower Station,KAM-B03-332,Guardian Fire Systems,GF-7990V,L15T-33577,2014-01-28,I,C
+AHU-REG-01,Air Handling Unit,REG-B04-352,Norvent Systems,NS-2404M,B93X-38705,2009-10-28,A,H
+FAP-KGN-01,Fire Alarm Control Panel,KGN-B02-253,Guardian Fire Systems,GF-5314E,T60B-48006,2014-02-05,A,C
+RFR-SUD-01,Laboratory Refrigerator,SUD-B01-386,CryoNorth Scientific,CS-3577D,Y90V-12167,2007-01-28,A,M
+CLD-MCT-01,Walk-In Cold Room,MCT-B02-108,CryoNorth Scientific,CS-1490R,N66D-40811,2003-10-27,A,H
+CHL-KAM-01,"Chiller, Centrifugal",KAM-B01-238,ThermaCore Industries,TI-168D,T34W-25195,2002-02-08,I,C
+FAP-REG-01,Fire Alarm Control Panel,REG-B01-152,Guardian Fire Systems,GF-896T,W58G-80620,2022-10-27,A,C
+INC-KGN-01,CO2 Incubator,KGN-B04-398,Apex Labware,AL-128L,V74M-82334,2000-06-10,A,H
+EXF-SUD-01,"Exhaust Fan, Laboratory",SUD-B01-211,Northline Mechanical,NM-8912G,E87S-30652,2001-03-12,A,H
+BLR-MCT-01,"Boiler, Hot Water",MCT-B04-237,Northline Mechanical,NM-2672A,L57Y-82158,2007-05-13,A,H
+SPR-KAM-01,"Sprinkler System, Wet Pipe",KAM-B01-194,Guardian Fire Systems,GF-395P,P27C-64033,2000-06-21,A,C
+INC-REG-01,CO2 Incubator,REG-B01-230,BioSafe Laboratories,BL-9195V,E47H-48899,2003-01-22,A,H
+GLW-KGN-01,Glassware Washer,KGN-B03-117,BioSafe Laboratories,BL-3676H,R65F-58205,2002-09-04,A,M
+CTW-SUD-01,Cooling Tower,SUD-B02-337,Ventura Air,VA-2438A,W44K-68438,2011-03-19,A,H
+BLR-MCT-01,"Boiler, Hot Water",MCT-B01-187,Northline Mechanical,NM-2672A,G68B-47326,2019-04-28,A,H
+CTF-KAM-01,"Centrifuge, Floor Model",KAM-B04-243,Sterilix Medical,SM-8994L,Y85Z-91409,2005-06-09,A,M
+GLW-REG-01,Glassware Washer,REG-B02-374,BioSafe Laboratories,BL-7997K,B78P-71207,2013-07-02,A,M
+GEN-KGN-01,"Emergency Generator, Diesel",KGN-B04-191,Hydrotec Controls,HC-6624C,D40L-49945,2013-03-19,A,C
+AUT-SUD-01,"Autoclave, Steam Sterilizer",SUD-B02-304,Apex Labware,AL-9575H,K51C-67217,2017-07-23,D,C
+WPS-MCT-01,"Water Purification System, RO/DI",MCT-B04-231,PureStream Water,PW-6901G,S25C-79053,2009-12-29,A,H
+LN2-KAM-01,Liquid Nitrogen Storage Vessel,KAM-B04-128,ChillWell Refrigeration,CR-6508P,E67J-67498,2016-05-15,A,C
+GEN-REG-01,"Emergency Generator, Diesel",REG-B04-109,Vantage Power Group,VP-2911T,V15T-81779,2003-12-06,A,C
+FMH-KGN-01,"Fume Hood, Bench Mounted",KGN-B01-151,BioSafe Laboratories,BL-8067B,P25M-13130,1999-12-29,A,C
+CMP-SUD-01,"Air Compressor, Oil Free",SUD-B02-206,AeroFlow Systems,AS-8905M,M60R-21571,2007-07-02,A,H
+HFU-MCT-01,HEPA Filtration Unit,MCT-B01-127,Norvent Systems,NS-1670E,T87Y-27128,2023-08-10,A,H
+UPS-KAM-01,Uninterruptible Power Supply,KAM-B02-200,Hydrotec Controls,HC-1772P,E99K-51053,2006-05-29,A,C
+FMH-REG-01,"Fume Hood, Bench Mounted",REG-B04-153,Apex Labware,AL-1998G,S93L-79726,2014-09-30,A,C
+VAC-KGN-01,"Vacuum Pump, Central",KGN-B01-183,AeroFlow Systems,AS-515G,P85X-46636,2015-10-29,I,H
+DHU-SUD-01,"Dehumidifier, Industrial",SUD-B01-165,Norvent Systems,NS-3689X,H11A-47882,15/03/2022,D,L
+ATS-MCT-01,Automatic Transfer Switch,MCT-B01-262,Vantage Power Group,VP-2080A,Z48Z-24342,2018-09-09,A,C
+BSC-KAM-01,"Biosafety Cabinet, Class II A2",KAM-B03-199,Apex Labware,AL-2971V,Y79W-97855,2018-04-21,A,C
+VAC-REG-01,"Vacuum Pump, Central",REG-B01-251,AeroFlow Systems,AS-3867G,L95Z-67438,2020-08-06,A,H
+AHU-KGN-02,Air Handling Unit,KGN-B01-165,Northline Mechanical,NM-7966S,F86Z-44448,2007-05-04,D,H
+ELV-SUD-02,"Elevator, Passenger",SUD-B03-240,Liftech Elevator,LE-2868G,V68N-19400,2001-09-02,A,H
+ULF-MCT-02,"Ultra-Low Freezer, -80C",MCT-B04-300,CryoNorth Scientific,CS-2481M,W19G-50607,2021-02-04,A,C
+EWS-KAM-02,Emergency Eyewash and Shower Station,KAM-B03-165,Guardian Fire Systems,GF-7946P,P13Z-93382,2002-06-09,A,C
+AHU-REG-02,Air Handling Unit,REG-B03-279,Northline Mechanical,NM-3687C,D29Y-90566,2022-06-18,A,H
+FAP-KGN-02,Fire Alarm Control Panel,KGN-B03-243,Guardian Fire Systems,GF-6157E,W23C-26070,2021-12-11,I,C
+RFR-SUD-02,Laboratory Refrigerator,SUD-B04-247,ChillWell Refrigeration,CR-6150L,E26W-21350,2022-06-11,A,M
+CLD-MCT-02,Walk-In Cold Room,MCT-B03-348,ChillWell Refrigeration,CR-150G,W46F-66199,2015-08-24,A,H
+CHL-KAM-02,"Chiller, Centrifugal",KAM-B02-267,ChillWell Refrigeration,CR-8165D,X77F-59342,2002-04-08,D,C
+FAP-REG-02,Fire Alarm Control Panel,REG-B01-300,Guardian Fire Systems,GF-9229D,T85F-65538,2011-10-08,A,C
+INC-KGN-02,,KGN-B02-293,Apex Labware,AL-5785X,H89A-80052,2006-12-31,A,H
+EXF-SUD-02,"Exhaust Fan, Laboratory",SUD-B01-104,Norvent Systems,NS-6288E,G81W-46613,2017-04-01,A,H
+BLR-MCT-02,"Boiler, Hot Water",MCT-B02-283,Norvent Systems,NS-9028T,A27N-72316,2016-12-14,A,H
+SPR-KAM-02,"Sprinkler System, Wet Pipe",KAM-B01-189,Guardian Fire Systems,GF-2490V,D55K-78990,2001-10-19,A,C
+INC-REG-02,CO2 Incubator,REG-B01-355,Sterilix Medical,SM-1150P,E46J-64616,2006-12-02,A,H
+GLW-KGN-02,Glassware Washer,KGN-B02-322,Apex Labware,AL-8912F,R61A-36113,2016-08-26,A,M
+CTW-SUD-02,Cooling Tower,SUD-B02-207,Ventura Air,VA-2762T,F43N-71043,2025-07-10,I,H
+ATS-MCT-01,Automatic Transfer Switch,MCT-B01-264,Vantage Power Group,VP-2080A,L94Z-61994,2002-05-21,A,C
+CTF-KAM-02,"Centrifuge, Floor Model",KAM-B01-154,Apex Labware,AL-7334C,F45S-72580,2015-12-05,A,M
+GLW-REG-02,Glassware Washer,REG-B01-280,Apex Labware,AL-3357X,Z66T-31260,2011-12-25,A,M
+GEN-KGN-02,"Emergency Generator, Diesel",KGN-B01-217,Hydrotec Controls,HC-4456R,L76N-68759,2001-05-28,A,C
+AUT-SUD-02,"Autoclave, Steam Sterilizer",SUD-B02-366,Apex Labware,AL-4079D,J98B-92572,2011-07-01,A,C
+WPS-MCT-02,"Water Purification System, RO/DI",MCT-B03-260,PureStream Water,PW-3765B,W76D-15386,2022-01-09,D,H
+LN2-KAM-02,Liquid Nitrogen Storage Vessel,KAM-B02-203,CryoNorth Scientific,CS-2063G,W49H-99991,2023-02-23,A,C
+GEN-REG-02,"Emergency Generator, Diesel",REG-B04-379,Hydrotec Controls,HC-6541D,X42M-48092,2012-11-17,A,C
+FMH-KGN-02,"Fume Hood, Bench Mounted",HAL-B01-118,Apex Labware,AL-8043P,B77T-75832,2003-07-19,A,C
+CMP-SUD-02,"Air Compressor, Oil Free",SUD-B02-319,Ventura Air,VA-7790H,E63P-41758,2019-09-14,A,H
+HFU-MCT-02,HEPA Filtration Unit,MCT-B02-335,Norvent Systems,NS-6143P,B24D-58924,2020-12-06,A,H
+UPS-KAM-02,Uninterruptible Power Supply,KAM-B01-280,Vantage Power Group,VP-2220E,R34V-56074,2021-09-22,A,C
+FMH-REG-02,"Fume Hood, Bench Mounted",REG-B02-106,Apex Labware,AL-9363E,F44L-62834,2017-08-06,A,C
+VAC-KGN-02,"Vacuum Pump, Central",KGN-B02-300,ThermaCore Industries,TI-9685E,M89G-50513,2012-10-03,A,H
+DHU-SUD-02,"Dehumidifier, Industrial",SUD-B01-252,Norvent Systems,NS-7764C,D53L-99858,2001-11-22,A,L
+ATS-MCT-02,Automatic Transfer Switch,MCT-B01-376,Vantage Power Group,VP-2892R,P15C-79933,2004-09-29,A,C
+BSC-KAM-02,"Biosafety Cabinet, Class II A2",KAM-B04-202,BioSafe Laboratories,BL-1261X,W25J-39921,2003-10-23,A,C
+VAC-REG-02,"Vacuum Pump, Central",REG-B04-270,Northline Mechanical,NM-7095D,M11P-51763,2008-05-07,D,H
+AHU-KGN-03,Air Handling Unit,KGN-B04-373,Ventura Air,VA-3270S,D21S-13088,2022-11-05,A,H
+ELV-SUD-03,"Elevator, Passenger",SUD-B01-106,Liftech Elevator,LE-6220X,L55C-25745,2000-05-24,A,H
+ULF-MCT-03,"Ultra-Low Freezer, -80C",MCT-B04-205,ChillWell Refrigeration,CR-3760E,A90D-96082,2010-11-04,A,C
+EWS-KAM-03,Emergency Eyewash and Shower Station,KAM-B01-327,Guardian Fire Systems,GF-2123E,S25S-93695,2008-05-22,A,C
+AHU-REG-03,Air Handling Unit,REG-B03-258,Norvent Systems,NS-7194A,A28T-29215,2010-05-19,A,H
+FAP-KGN-03,Fire Alarm Control Panel,KGN-B04-302,Guardian Fire Systems,GF-2481M,S74T-99002,2002-02-24,A,C
+RFR-SUD-03,Laboratory Refrigerator,SUD-B03-103,ChillWell Refrigeration,CR-5321A,R17V-82175,2021-10-28,A,M
+CLD-MCT-03,Walk-In Cold Room,MCT-B01-296,CryoNorth Scientific,CS-8913M,G65Z-30251,2000-06-03,A,H
+CHL-KAM-03,"Chiller, Centrifugal",KAM-B04-173,Norvent Systems,NS-3754X,E74T-32003,2009-04-29,A,C
+FAP-REG-03,Fire Alarm Control Panel,REG-B04-120,Guardian Fire Systems,GF-9650B,H45R-98494,2017-03-06,A,C

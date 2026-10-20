@@ -1,0 +1,1504 @@
+{
+  "app": {
+    "name": "WorkAxis",
+    "tagline": "Maintenance management",
+    "description": "Maintenance management for laboratory facilities: assets, work orders, preventive maintenance, inspections and spare parts."
+  },
+  "common": {
+    "actions": "Actions",
+    "cancel": "Cancel",
+    "close": "Close",
+    "confirm": "Confirm",
+    "retry": "Try again",
+    "save": "Save changes",
+    "search": "Search",
+    "clear": "Clear",
+    "openMenu": "Open menu",
+    "notBuiltYet": "Not built yet. This screen arrives with the records.",
+    "more": "More"
+  },
+  "shell": {
+    "skipToContent": "Skip to main content",
+    "primaryNavigation": "Modules",
+    "toggleNavigation": "Show or hide the module list",
+    "mainContent": "Main content",
+    "views": {
+      "fieldHint": "Built for a phone in a corridor: today's work, one order at a time."
+    },
+    "search": {
+      "label": "Search",
+      "placeholder": "Search assets, work orders, parts",
+      "hint": "Search arrives with the asset and work-order registers."
+    },
+    "notifications": {
+      "label": "Notifications",
+      "title": "Notifications",
+      "count": "{count, plural, =0 {No unread notifications} one {# unread notification} other {# unread notifications}}",
+      "loading": "Checking for anything new",
+      "emptyTitle": "Nothing needs your attention",
+      "emptyBody": "Overdue work, failed inspections and parts below their minimum will be listed here.",
+      "toastRegion": "Messages from the application",
+      "markAllRead": "Mark all read",
+      "allReadTitle": "Nothing unread",
+      "allReadBody": "Everything here has been read. New alerts appear as the records change.",
+      "openRecord": "Open the record this is about",
+      "unreadInGroup": "{count, plural, =0 {all read} one {# unread} other {# unread}}",
+      "settingsLink": "Notification settings"
+    },
+    "user": {
+      "menuLabel": "Session and preferences",
+      "demoSession": "Demo session",
+      "demoSessionHint": "No sign-in in the demo. Switch role to see the application as someone else.",
+      "role": "Role",
+      "switchRole": "Switch role",
+      "language": "Language",
+      "roleChanged": "Now viewing as {role}"
+    },
+    "language": {
+      "label": "Language",
+      "options": {
+        "en-CA": "English",
+        "fr-CA": "Français"
+      },
+      "short": {
+        "en-CA": "EN",
+        "fr-CA": "FR"
+      },
+      "switchTo": "Display the application in {language}"
+    },
+    "breadcrumb": {
+      "label": "You are here",
+      "home": "Home"
+    },
+    "connection": {
+      "online": "Connected",
+      "offline": "Working offline",
+      "offlineHint": "Changes are kept on the device and sent when the connection returns."
+    },
+    "navigationSheetHint": "The module list, shown as a panel on a narrow screen."
+  },
+  "roles": {
+    "administrator": {
+      "name": "Administrator",
+      "summary": "Full access, including users, roles and settings."
+    },
+    "facilityManager": {
+      "name": "Facility manager",
+      "summary": "Runs one or more sites: assets, work, plans and reports."
+    },
+    "maintenanceCoordinator": {
+      "name": "Maintenance coordinator",
+      "summary": "Plans and assigns the daily work across trades."
+    },
+    "technician": {
+      "name": "Technician",
+      "summary": "Carries out assigned work orders on site."
+    },
+    "inspector": {
+      "name": "Inspector",
+      "summary": "Completes inspections and raises findings."
+    },
+    "auditor": {
+      "name": "Auditor",
+      "summary": "Reads records and reports. Changes nothing."
+    }
+  },
+  "permissions": {
+    "deniedTitle": "Not available to your role",
+    "deniedBody": "This screen is limited to other roles. Your current role is {role}.",
+    "deniedHint": "Switch role from the session menu to see it.",
+    "actionDenied": "{role} cannot do this. Switch role to continue.",
+    "readOnly": "Read-only for {role}."
+  },
+  "states": {
+    "loading": {
+      "label": "Loading"
+    },
+    "saving": {
+      "label": "Saving…",
+      "failedTitle": "This change was not saved on this device",
+      "failedBody": "It is on the screen but not stored, so it will be gone if you reload. Try again, and check that this browser is allowed to store data for this site.",
+      "deviceTitle": "This device is not saving changes",
+      "deviceBody": "The last change was not stored, so it will be gone when you reload. Check that this browser is allowed to store data for this site."
+    },
+    "unreadable": {
+      "title": "The saved records could not be read",
+      "body": "WorkAxis keeps this demonstration's records in this browser, and this time it could not read them back. Nothing has been changed or lost — the records are still there and nothing new will be written over them until they can be read.",
+      "reload": "Try again",
+      "persists": "If this keeps happening, open Settings: it says whether this browser is storing anything at all."
+    },
+    "error": {
+      "title": "This screen did not load",
+      "body": "Nothing was changed. Try again, and if it keeps failing, reload the page.",
+      "action": "Try again"
+    },
+    "noResults": {
+      "title": "No matches",
+      "body": "No records match the current search and filters.",
+      "action": "Clear filters"
+    },
+    "notFound": {
+      "title": "Page not found",
+      "body": "The address you opened does not exist in WorkAxis.",
+      "action": "Go to home"
+    },
+    "comingIn": "Arrives in {ticket}"
+  },
+  "modules": {
+    "dashboard": {
+      "title": "Dashboard",
+      "description": "What needs attention across every site today.",
+      "emptyTitle": "Nothing to show for this site",
+      "emptyBody": "Every total on this screen is counted from the records in this browser, so an empty screen means an empty site.",
+      "point1": "Open, overdue and critical work orders, each a link into the queue",
+      "point2": "Spare parts below their minimum, and inspections still to run",
+      "point3": "A needs-attention list ordered by how late the work is"
+    },
+    "facilities": {
+      "title": "Facilities",
+      "description": "Sites, buildings, floors and rooms.",
+      "emptyTitle": "No sites yet",
+      "emptyBody": "Every asset and every work order hangs off a location, so the location tree is built first.",
+      "point1": "Five laboratory sites across provinces, each with buildings, floors and rooms",
+      "point2": "The assets held in any location, one click from the location",
+      "point3": "Site contacts and operating hours"
+    },
+    "assets": {
+      "title": "Assets",
+      "description": "The equipment register: what it is, where it is, how critical it is.",
+      "emptyTitle": "No assets yet",
+      "emptyBody": "The register is the backbone of the system: work orders, plans, inspections and documents all attach to an asset.",
+      "point1": "Tag, type, location, criticality and status for every piece of equipment",
+      "point2": "Full history per asset: work done, parts used, inspections passed",
+      "point3": "A printable QR label so a technician can open the asset by scanning it"
+    },
+    "workOrders": {
+      "title": "Work orders",
+      "description": "Corrective and preventive work, from request to completion.",
+      "emptyTitle": "No work orders yet",
+      "emptyBody": "A work order carries the whole job: the asset, who is doing it, the tasks, the parts and the record of what happened.",
+      "point1": "A queue filtered by status, priority, site and assignee",
+      "point2": "Fixed status steps with a reason required before anything is cancelled",
+      "point3": "Task checklists, parts used and a time-stamped history"
+    },
+    "preventiveMaintenance": {
+      "title": "Preventive maintenance",
+      "description": "Recurring plans that raise work before something fails.",
+      "emptyTitle": "No maintenance plans yet",
+      "emptyBody": "Plans turn a schedule into work orders automatically, which is how compliance dates get met.",
+      "point1": "Plans by asset or asset type, with the tasks each visit requires",
+      "point2": "Frequency by calendar or by meter reading",
+      "point3": "A forward schedule showing what is due, by site and by week"
+    },
+    "inspections": {
+      "title": "Inspections",
+      "description": "Templates, completed inspections and the findings they raise.",
+      "emptyTitle": "No inspection templates yet",
+      "emptyBody": "An inspection is a fixed set of questions with a recorded answer for each, which is what makes the result auditable.",
+      "point1": "Reusable templates with pass, fail and measured-value questions",
+      "point2": "Completed inspections with who did them and when",
+      "point3": "Findings that become work orders without being retyped"
+    },
+    "inventory": {
+      "title": "Inventory",
+      "description": "Spare parts, stock levels and what was issued to which job.",
+      "emptyTitle": "No parts yet",
+      "emptyBody": "Stock only means something next to a minimum, so parts arrive with their reorder point.",
+      "point1": "Stock on hand against the minimum, per storeroom",
+      "point2": "Parts issued to a work order, deducted from stock",
+      "point3": "A transaction trail for every receipt, issue and adjustment"
+    },
+    "documents": {
+      "title": "Documents",
+      "description": "Manuals, certificates and drawings, attached where they are needed.",
+      "emptyTitle": "No documents yet",
+      "emptyBody": "A document is only useful next to the asset or the site it belongs to, so documents are filed against records rather than in folders.",
+      "point1": "Manuals, calibration certificates and drawings per asset and per site",
+      "point2": "Version and expiry, so an out-of-date certificate is visible",
+      "point3": "Download from the asset, the work order or the inspection"
+    },
+    "reports": {
+      "title": "Reports",
+      "description": "Operational reporting on work, compliance and stock.",
+      "emptyTitle": "No reports yet",
+      "emptyBody": "Reports read the same records as the screens, so a number in a report can always be traced back to the work orders behind it.",
+      "point1": "Backlog, completion time and overdue work by site",
+      "point2": "Inspection compliance against what was scheduled",
+      "point3": "Export to CSV and print, in English or French"
+    },
+    "users": {
+      "title": "Users and roles",
+      "description": "Who uses WorkAxis and what each role may do.",
+      "emptyTitle": "No users yet",
+      "emptyBody": "Roles are the security model: every screen and every action asks the role first.",
+      "point1": "Demo users across the six roles, each assigned to sites",
+      "point2": "A plain-language list of what each role may and may not do",
+      "point3": "Role changes take effect immediately, with an audit entry"
+    },
+    "waitingToSend": {
+      "title": "Waiting to send",
+      "description": "Changes saved on this device that the server has not been told about yet.",
+      "emptyTitle": "Everything has been sent",
+      "emptyBody": "Nothing on this device is waiting for the server.",
+      "point1": "What each change will do, in the order it will be sent",
+      "point2": "Whether it was made while offline",
+      "point3": "What happened to the last change that was sent"
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Organization, languages and demo data.",
+      "emptyTitle": "The rest of settings arrives with the screens it describes",
+      "emptyBody": "Resetting the demonstration works now, above. The remaining settings describe the organization and its vocabulary, so they land with the screens that read them.",
+      "point1": "Default language and time zone for the organization",
+      "point2": "Vocabulary lists such as asset types and failure causes, in both languages",
+      "point3": "Work-order numbering and the default due date"
+    },
+    "myWork": {
+      "title": "My work today",
+      "description": "The work assigned to you, one job at a time.",
+      "emptyTitle": "Nothing assigned to you",
+      "emptyBody": "Work assigned to you appears here as cards you can open with one thumb.",
+      "point1": "Today's assigned work, most urgent first",
+      "point2": "One work order at a time: tasks, parts, photos",
+      "point3": "Keeps working without a signal, and sends when the connection returns"
+    },
+    "myNotifications": {
+      "title": "My notifications",
+      "description": "What you hear about, and how. Your own choices, not the organization's.",
+      "emptyTitle": "Nothing to choose from yet",
+      "emptyBody": "The alerts you can turn on and off appear here once the records have been read.",
+      "point1": "Choose which alerts reach you in the app",
+      "point2": "Choose which of them would also be emailed",
+      "point3": "An auditor sees the choices and cannot change them"
+    }
+  },
+  "dashboard": {
+    "filter": {
+      "label": "Site",
+      "allSites": "All sites"
+    },
+    "kpi": {
+      "openWorkOrders": "Open work orders",
+      "overdue": "Overdue",
+      "criticalOpen": "Critical, open",
+      "partsBelowMinimum": "Parts below minimum",
+      "inspectionsScheduled": "Inspections scheduled"
+    },
+    "work": {
+      "unknownSite": "Site not recorded",
+      "daysLate": "{days, plural, one {# day late} other {# days late}}",
+      "dueOn": "Due {date}",
+      "noDueDate": "No due date"
+    },
+    "exceptions": {
+      "title": "Needs attention",
+      "description": "Late work first, then critical work that is still open.",
+      "emptyTitle": "Nothing late, nothing critical",
+      "emptyBody": "No work order here is past its due date or set to critical."
+    },
+    "chart": {
+      "title": "Work orders by status",
+      "description": "Every status, including the ones with nothing in them.",
+      "emptyTitle": "No work orders",
+      "emptyBody": "There is no work recorded here yet.",
+      "summaryLabel": "Work orders by status",
+      "summaryEntry": "{status} — {count}",
+      "axisEntry": "{status} — {count}"
+    },
+    "upcoming": {
+      "title": "Maintenance due soon",
+      "description": "Planned visits in the next two weeks.",
+      "emptyTitle": "Nothing due in the next two weeks",
+      "emptyBody": "No maintenance plan reaches its next visit inside the window.",
+      "unknownAsset": "Equipment not recorded",
+      "unknownPlan": "Plan not recorded",
+      "dueToday": "Due today",
+      "dueIn": "{date} — in {days, plural, one {# day} other {# days}}"
+    },
+    "activity": {
+      "title": "Recent activity",
+      "description": "Every change to the records, newest first.",
+      "emptyTitle": "Nothing has changed yet",
+      "emptyBody": "Changes made in the demonstration appear here as they happen.",
+      "systemActor": "WorkAxis",
+      "unknownActor": "Unattributed",
+      "unreadableChange": "A change was recorded",
+      "byline": "{who} · {when}"
+    },
+    "myWork": {
+      "title": "Assigned to me",
+      "description": "Your open work, most urgent first.",
+      "emptyTitle": "Nothing assigned to you",
+      "emptyBody": "Work assigned to you appears here, one card at a time."
+    }
+  },
+  "actions": {
+    "newWorkOrder": "New work order",
+    "addAsset": "Add asset"
+  },
+  "demo": {
+    "title": "Demo controls",
+    "body": "Puts the demonstration back to where it started: the original records, English, the Administrator role and an expanded module rail.",
+    "reset": "Reset the demonstration",
+    "confirmTitle": "Reset the demonstration?",
+    "confirmBody": "Every change made in this browser is discarded and the original records are rebuilt for today. The language returns to English and the role to Administrator.",
+    "confirmAction": "Reset the demonstration",
+    "done": "Demonstration reset",
+    "dataNote": "The records live in this browser only. Resetting affects nobody else."
+  },
+  "workOrderStatus": {
+    "open": "Open",
+    "assigned": "Assigned",
+    "inProgress": "In progress",
+    "waitingForParts": "Waiting for parts",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "refused": "A work order cannot move from {from} to {to}.",
+    "reasonRequired": "Cancelling a work order needs a reason.",
+    "refusedByRule": "An administrator has switched this move off in Settings."
+  },
+  "priority": {
+    "critical": "Critical",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "workOrderType": {
+    "preventive": "Preventive",
+    "corrective": "Corrective",
+    "emergency": "Emergency",
+    "inspection": "Inspection",
+    "calibration": "Calibration",
+    "safety": "Safety"
+  },
+  "workOrderQueue": {
+    "caption": "Work orders, newest request first.",
+    "searchLabel": "Search work orders",
+    "searchPlaceholder": "Number, title or asset tag",
+    "columns": {
+      "number": "Number",
+      "title": "Title",
+      "status": "Status",
+      "priority": "Priority",
+      "due": "Due",
+      "assignee": "Assigned to",
+      "facility": "Site",
+      "type": "Type"
+    },
+    "daysLate": "{days, plural, one {# day late} other {# days late}}",
+    "noDueDate": "No due date",
+    "unassigned": "Unassigned",
+    "allSites": "All sites",
+    "clearAll": "Clear filters",
+    "showing": "{shown} of {total}",
+    "due": {
+      "any": "Any due date",
+      "overdue": "Overdue",
+      "today": "Due today",
+      "week": "Due in 7 days",
+      "month": "Due in 30 days",
+      "none": "No due date"
+    },
+    "assignee": {
+      "anyone": "Anyone",
+      "unassigned": "Unassigned",
+      "crew": "A crew, not a person"
+    },
+    "facets": {
+      "clearOne": "Clear {facet}",
+      "filterBy": "Filter by {facet}"
+    }
+  },
+  "assetStatus": {
+    "active": "Active",
+    "inactive": "Inactive",
+    "decommissioned": "Decommissioned"
+  },
+  "criticality": {
+    "critical": "Critical",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  },
+  "scheduleFrequency": {
+    "weekly": "Weekly",
+    "monthly": "Monthly",
+    "quarterly": "Quarterly",
+    "semiAnnual": "Twice a year",
+    "annual": "Yearly"
+  },
+  "partCategory": {
+    "filters": "Filters",
+    "beltsAndSeals": "Belts and seals",
+    "lamps": "Lamps",
+    "sensors": "Sensors",
+    "valves": "Valves",
+    "pumps": "Pumps",
+    "electrical": "Electrical",
+    "water": "Water",
+    "lifeSafety": "Life safety",
+    "consumables": "Consumables"
+  },
+  "unitOfMeasure": {
+    "each": "{count, plural, one {each} other {each}}",
+    "box": "{count, plural, one {box} other {boxes}}",
+    "litre": "{count, plural, one {L} other {L}}",
+    "metre": "{count, plural, one {m} other {m}}",
+    "kit": "{count, plural, one {kit} other {kits}}"
+  },
+  "inventoryTransactionKind": {
+    "issue": "Issued",
+    "receipt": "Received",
+    "adjustment": "Adjustment",
+    "return": "Returned"
+  },
+  "inspectionStatus": {
+    "scheduled": "Scheduled",
+    "inProgress": "In progress",
+    "passed": "Passed",
+    "failed": "Failed"
+  },
+  "assetDetail": {
+    "metaTitle": "{tag}",
+    "backToAssets": "Back to assets",
+    "locationUnknown": "Location not recorded",
+    "edit": {
+      "action": "Edit asset",
+      "title": "Edit asset",
+      "description": "Change what this system records about {tag}. The tag, type and location are fixed.",
+      "status": "Status",
+      "criticality": "Criticality",
+      "manufacturer": "Manufacturer",
+      "model": "Model",
+      "serialNumber": "Serial number",
+      "save": "Save changes",
+      "saved": "Asset updated",
+      "nothingChanged": "Nothing was changed"
+    },
+    "sections": "Asset sections",
+    "unreadable": "Not readable",
+    "notRecorded": "Not recorded",
+    "tabs": {
+      "overview": "Overview",
+      "history": "History",
+      "workOrders": "Work orders",
+      "maintenance": "Maintenance",
+      "inspections": "Inspections",
+      "documents": "Documents",
+      "parts": "Parts",
+      "label": "Label"
+    },
+    "overview": {
+      "identity": "Identification",
+      "tag": "Asset tag",
+      "name": "Name",
+      "type": "Type",
+      "manufacturer": "Manufacturer",
+      "model": "Model",
+      "serialNumber": "Serial number",
+      "installedOn": "Installed",
+      "place": "Location",
+      "facility": "Site",
+      "kind": {
+        "building": "Building",
+        "floor": "Floor",
+        "room": "Room"
+      }
+    },
+    "history": {
+      "title": "History",
+      "description": "Everything that has happened to this asset, newest first.",
+      "emptyTitle": "Nothing recorded yet",
+      "emptyBody": "Work, inspections, parts and changes appear here as they happen.",
+      "unreadableChange": "A change was recorded",
+      "unreadableChecklist": "Checklist not readable",
+      "unreadablePart": "a part that is not readable",
+      "movement": "Used on {order}: {part} (quantity {quantity})",
+      "kind": {
+        "workOrder": "Work order",
+        "inspection": "Inspection",
+        "movement": "Parts",
+        "audit": "Change"
+      }
+    },
+    "workOrders": {
+      "title": "Work orders",
+      "description": "Work raised against this asset, open first.",
+      "emptyTitle": "No work raised",
+      "emptyBody": "Work orders for this asset appear here.",
+      "dueOn": "Due {date}",
+      "overdueOn": "Was due {date}",
+      "noDueDate": "No due date"
+    },
+    "maintenance": {
+      "title": "Maintenance",
+      "description": "The plans this asset is on, and when each is next due.",
+      "emptyTitle": "Not on a maintenance plan",
+      "emptyBody": "This asset has no scheduled preventive maintenance.",
+      "unreadablePlan": "Plan not readable",
+      "overdueBy": "{days, plural, one {# day overdue} other {# days overdue}}",
+      "dueToday": "Due today",
+      "dueIn": "{date} — in {days, plural, one {# day} other {# days}}",
+      "lastDone": "Last done {date}",
+      "neverDone": "Never done",
+      "frequency": {
+        "weekly": "Weekly",
+        "monthly": "Monthly",
+        "quarterly": "Quarterly",
+        "semiAnnual": "Twice a year",
+        "annual": "Yearly"
+      }
+    },
+    "inspections": {
+      "title": "Inspections",
+      "description": "What has been inspected on this asset.",
+      "emptyTitle": "No inspections",
+      "emptyBody": "Inspections of this asset appear here.",
+      "unreadableChecklist": "Checklist not readable",
+      "performedOn": "Done {date}",
+      "scheduledFor": "Scheduled for {date}"
+    },
+    "documents": {
+      "title": "Documents",
+      "description": "Paperwork filed against this asset. Phase 1 records the document, not the file.",
+      "emptyTitle": "No documents",
+      "emptyBody": "Manuals, certificates and reports filed against this asset appear here.",
+      "size": "{kilobytes} kB",
+      "version": "Version {version}",
+      "uploadedOn": "Filed {date}"
+    },
+    "parts": {
+      "title": "Parts",
+      "description": "Spares that have been fitted to this asset.",
+      "emptyTitle": "No parts recorded",
+      "emptyBody": "Parts issued against this asset's work orders appear here.",
+      "low": "Low",
+      "ok": "In stock",
+      "stock": "{onHand} on hand, minimum {minimum}"
+    },
+    "pageDescription": "Everything this system records about one piece of equipment."
+  },
+  "documentKind": {
+    "manual": "Manual",
+    "certificate": "Certificate",
+    "drawing": "Drawing",
+    "procedure": "Procedure",
+    "contract": "Contract",
+    "report": "Report",
+    "photo": "Photo"
+  },
+  "documentType": {
+    "pdf": "PDF",
+    "word": "Word",
+    "excel": "Excel",
+    "other": "Other"
+  },
+  "filedAgainst": {
+    "asset": "Asset {label}",
+    "workOrder": "Work order {label}",
+    "maintenancePlan": "Plan {label}",
+    "facility": "Site {label}",
+    "organisation": "Organization",
+    "unresolved": "A record this system does not hold ({label})",
+    "organisationHint": "Filed against the organization rather than one record"
+  },
+  "documentsTable": {
+    "searchLabel": "Search documents",
+    "searchPlaceholder": "Title, file name or record",
+    "caption": "Every document, newest first",
+    "columns": {
+      "title": "Title",
+      "kind": "Kind",
+      "filedAgainst": "Filed against",
+      "type": "Type",
+      "size": "Size",
+      "version": "Version",
+      "uploaded": "Uploaded"
+    },
+    "size": "{kilobytes} KB",
+    "version": "v{version}",
+    "noBytes": "Metadata only: this demonstration records the file, not its contents.",
+    "rowActions": "Actions for {title}"
+  },
+  "facilities": {
+    "caption": "Sites, buildings, floors and rooms",
+    "equipment": "{count, plural, =0 {No equipment} one {# piece of equipment} other {# pieces of equipment}}",
+    "openWork": "{count, plural, =0 {No open work} one {# open work order} other {# open work orders}}",
+    "roomEmptyTitle": "Nothing recorded in this room",
+    "roomEmptyBody": "Equipment is filed against the room it stands in, so a room with none is a room nothing has been recorded in yet.",
+    "openInRegister": "Open {tag} in the asset register",
+    "kind": {
+      "site": "Site",
+      "building": "Building",
+      "floor": "Floor",
+      "room": "Room"
+    },
+    "viewLabel": "How to read the places",
+    "viewList": "List",
+    "viewMap": "Map"
+  },
+  "floorMap": {
+    "metaTitle": "Floor plan {floor}",
+    "pageDescription": "Where the equipment on this floor stands, and what is open against it.",
+    "planAlt": "Floor plan of {floor}, with a marker on each piece of equipment",
+    "caption": "Equipment on this floor",
+    "marker": "{tag}, {state}",
+    "markerUnreadable": "Unknown",
+    "overdue": "Work overdue",
+    "open": "Work open",
+    "clear": "Nothing open",
+    "unreadable": "Cannot be read",
+    "noDrawingTitle": "No drawing on file for this floor",
+    "noDrawingBody": "The floor has been surveyed and no drawing has been filed for it. Everything standing on it is listed below.",
+    "unrecordedTitle": "Nobody has looked for a drawing of this floor",
+    "unrecordedBody": "Whether a drawing exists for this floor has never been recorded, which is not the same as there being none. Everything standing on it is listed below.",
+    "notAFloorTitle": "{code} is not a floor",
+    "notAFloorBody": "This system holds {code}, and it is a {kind} rather than a floor. Plans are filed against floors, so there is no plan to show for it.",
+    "roomsTitle": "Rooms on this floor",
+    "roomEmpty": "Nothing recorded in this room",
+    "onThePlan": "On the plan",
+    "notOnThePlan": "Not on the plan",
+    "showOnPlan": "Show {tag} on the plan",
+    "openInRegister": "Open {tag} in the asset register",
+    "selectedTitle": "Selected equipment",
+    "nothingSelectedTitle": "Nothing selected",
+    "nothingSelectedBody": "Choose a machine on the plan, or in the rooms beside it, to see what is open against it.",
+    "openCount": "{count, plural, =0 {No open work} one {# open work order} other {# open work orders}}",
+    "overdueCount": "{count, plural, =0 {Nothing overdue} one {# overdue} other {# overdue}}",
+    "unreadableMarkerTitle": "This marker names equipment the records no longer hold",
+    "unreadableMarkerBody": "The position is on file and the machine it points at is not. That is not an empty space on the floor: it is a marker nobody can read, and it is shown as one rather than as a floor with nothing on it.",
+    "unplacedTitle": "On this floor, not on the plan",
+    "unplacedBody": "No position has been recorded for these, so the drawing cannot show where they stand. They are listed because a machine the plan cannot draw is still a machine on the floor.",
+    "missingBody": "Nothing in WorkAxis is filed under {identifier}. Floors are addressed by their code, as it reads on the plan: MCT-B01-F1.",
+    "backToFacilities": "Back to the places",
+    "openFloorPlan": "Floor plan",
+    "registerLink": "Register",
+    "openFloorPlanFor": "Floor plan for {code}",
+    "raiseAction": "Raise a work order",
+    "raiseDialogTitle": "Raise a work order for {tag}",
+    "raiseDialogDescription": "The equipment is already chosen. The order appears against it on this plan as soon as it is stored.",
+    "lowStock": "Spare running low",
+    "openOrdersTitle": "Open work on this machine",
+    "openOrderLink": "Open {number}",
+    "lowPartsCount": "{count, plural, =0 {No spare below its minimum} one {# spare below its minimum} other {# spares below their minimum}}",
+    "floorLabel": "Floor",
+    "onPhoneTitle": "The plan is shown from tablet width up",
+    "onPhoneBody": "A floor plan on a phone is smaller than the machines drawn on it. The rooms below hold everything the plan does, and each machine opens from there.",
+    "noPlansTitle": "No floor has a plan on file yet",
+    "noPlansBody": "A floor appears here once a drawing is filed against it. The places below are the whole estate either way."
+  },
+  "reports": {
+    "choose": "Report",
+    "name": {
+      "aging": "Work-order aging",
+      "completion": "Completion by site",
+      "inventory": "Inventory status",
+      "inspections": "Inspection pass rate"
+    },
+    "about": {
+      "aging": "How long the open work has been open. Buckets rather than an average, because the job open since March is the row anybody acts on.",
+      "completion": "What each site raised, and what it finished.",
+      "inventory": "What is on the shelf, and what is under its minimum.",
+      "inspections": "How many inspections passed. Work not yet done sits outside the rate rather than counting as a failure."
+    },
+    "columns": {
+      "bucket": "Open for",
+      "orders": "Work orders",
+      "oldest": "Oldest (days)",
+      "site": "Site",
+      "raised": "Raised",
+      "completed": "Completed",
+      "rate": "Rate",
+      "stockNumber": "Stock number",
+      "category": "Category",
+      "onHand": "On hand",
+      "minimum": "Minimum",
+      "state": "State",
+      "passed": "Passed",
+      "failed": "Failed",
+      "pending": "Not yet done"
+    },
+    "bucket": {
+      "week": "A week or less",
+      "month": "8 to 30 days",
+      "quarter": "31 to 90 days",
+      "older": "More than 90 days"
+    },
+    "state": {
+      "low": "Below minimum",
+      "ok": "In stock"
+    },
+    "percent": "{value}%",
+    "export": "Export these rows",
+    "exported": "{rows, plural, one {# row} other {# rows}} exported, and the trail records it.",
+    "rowsShown": "{rows, plural, =0 {No rows} one {# row} other {# rows}} on this report",
+    "emptyTitle": "Nothing to report here",
+    "emptyBody": "This report has no rows for the site you have chosen. Widen the filter to every site to see the rest."
+  },
+  "documentUpload": {
+    "action": "Attach a document",
+    "kindLabel": "Kind",
+    "recorded": "{fileName} recorded. The file itself is not stored in this demonstration.",
+    "refused": "{fileName} was not attached: this system takes PDF, Word and Excel files.",
+    "title": "Attachments",
+    "description": "Documents filed against this work order. Metadata only — the file itself is not stored.",
+    "emptyTitle": "Nothing attached yet",
+    "emptyBody": "Photographs, reports and procedures filed here stay with the work order."
+  },
+  "cancellationReason": {
+    "duplicate": "Duplicate of another order",
+    "noLongerRequired": "No longer required",
+    "assetDecommissioned": "Asset decommissioned",
+    "handledUnderAnotherOrder": "Handled under another order",
+    "notRecordedInSource": "No reason recorded in source system"
+  },
+  "validation": {
+    "required": "Required",
+    "tooLong": "Too long",
+    "tooLarge": "Too large",
+    "date": "Use a date in the form YYYY-MM-DD",
+    "positive": "Must be greater than zero",
+    "wholeNumber": "Must be a whole number",
+    "assetRequired": "Choose the equipment this work is for",
+    "locationRequired": "Choose where this equipment is",
+    "reasonRequired": "Choose a reason",
+    "assetTagShape": "Use the form ABC-SITE-01",
+    "moreThanOnHand": "More than there are on hand"
+  },
+  "notifications": {
+    "workOrderOverdue": "{number} is past its due date",
+    "partBelowMinimum": "{partNumber} is below its minimum, {onHand} on hand",
+    "inspectionFailed": "An inspection failed and needs corrective work",
+    "workOrderAssigned": "{number} was assigned to you",
+    "maintenanceDue": "{asset} is due for preventive maintenance, and {number} has been raised",
+    "workOrderDueSoon": "{number} is due on {dueAt}",
+    "inspectionDue": "{assetTag} is due for inspection on {scheduledFor}",
+    "syncConflict": "{label} could not be sent: the record changed while you were away",
+    "workOrderDueSoonSubject": "Due soon: {number}",
+    "workOrderOverdueSubject": "Overdue: {number}",
+    "workOrderAssignedSubject": "Assigned to you: {number}",
+    "partBelowMinimumSubject": "Low stock: {partNumber}",
+    "inspectionDueSubject": "Inspection due: {assetTag}",
+    "syncConflictSubject": "Not sent: {label}",
+    "kind": {
+      "workOrderDueSoon": "Due soon",
+      "workOrderOverdue": "Overdue",
+      "workOrderAssigned": "Assigned to you",
+      "partBelowMinimum": "Low stock",
+      "inspectionDue": "Inspections due",
+      "inspectionFailed": "Failed inspections",
+      "maintenanceDue": "Preventive maintenance",
+      "syncConflict": "Changes not sent"
+    }
+  },
+  "audit": {
+    "workOrderCreated": "Raised work order {number}",
+    "statusChanged": "{number} moved to {status}",
+    "workOrderAssigned": "{number} assigned to {user}",
+    "workOrderReassigned": "{number} reassigned from {from} to {to}",
+    "workOrderReassignedFromCrew": "{number} reassigned from crew {crew} to {to}",
+    "workOrderReassignedFromUnreadable": "{number} reassigned to {to}; the previous holder could not be read",
+    "assetUpdated": "Updated asset {tag}",
+    "partIssued": "Issued {quantity} of {partNumber}",
+    "notificationRead": "Marked a notification as read",
+    "demoReset": "Reset the demonstration records",
+    "partAdjusted": "Counted {partNumber}: {from} to {to}",
+    "importCommitted": "Imported {records} records from {fileName}",
+    "importRolledBack": "Undid the import of {fileName}, removing {records} records",
+    "dataRebuilt": "Demo data rebuilt for version {version}; records from version {previousVersion} were discarded.",
+    "dataRefreshed": "Demo data refreshed for {day}; records from {previousDay} were discarded.",
+    "conflictKeptMine": "Kept this device's version of {record}",
+    "conflictKeptTheirs": "Kept the server's version of {record}",
+    "workOrderCompleted": "{number} completed, {minutes} min logged",
+    "workOrderCancelled": "{number} cancelled: {reason}",
+    "taskTicked": "A task on {number} was ticked",
+    "taskUnticked": "A task on {number} was unticked",
+    "labourLogged": "{minutes} min logged against {number}",
+    "documentUploaded": "Uploaded {fileName}, version {version}",
+    "reportExported": "Exported the {report} report, {rows} rows",
+    "notificationsAllRead": "Marked {count} notifications read",
+    "notificationsRaised": "Raised {count} notifications",
+    "notificationChannelOn": "Turned on {channel} notifications for {kind}",
+    "notificationChannelOff": "Turned off {channel} notifications for {kind}",
+    "workflowMoveEnabled": "Allowed work orders to move from {fromStatus} to {toStatus}",
+    "workflowMoveDisabled": "Stopped work orders moving from {fromStatus} to {toStatus}",
+    "waitingForPartsEnabled": "Turned the Waiting for parts stage on",
+    "waitingForPartsDisabled": "Turned the Waiting for parts stage off",
+    "completionNoteRequired": "Made a note required when finishing a job",
+    "completionNoteOptional": "Made the note optional when finishing a job",
+    "prioritySlaChanged": "Set the {slaPriority} target to {hours} hours",
+    "notificationDefaultOn": "Turned on {channel} notifications for {kind}, for new people",
+    "notificationDefaultOff": "Turned off {channel} notifications for {kind}, for new people",
+    "userRoleChanged": "Changed {user} from {fromRole} to {toRole}",
+    "userSiteChanged": "Moved {user} from {fromSite} to {toSite}",
+    "userDeactivated": "Deactivated {user}",
+    "userReactivated": "Reactivated {user}"
+  },
+  "records": {
+    "missingTitle": "No record with that identifier",
+    "missingBody": "Nothing in WorkAxis matches {identifier}. Check the label, or scan it again."
+  },
+  "label": {
+    "title": "Label",
+    "description": "A printable QR and barcode label for this record.",
+    "metaTitle": "Label {identifier}",
+    "print": "Print label",
+    "printHint": "Prints the label on its own, without the rest of the screen.",
+    "qrAlt": "QR code that opens {identifier}",
+    "barcodeAlt": "Code 128 barcode for {identifier}",
+    "roomLine": "Room: {code}",
+    "binLine": "Bin: {code}",
+    "scanHint": "Scan to open this record in WorkAxis"
+  },
+  "scan": {
+    "title": "Scan",
+    "description": "Point the camera at a label, or upload a photo of one.",
+    "cameraTitle": "Camera",
+    "startCamera": "Start camera",
+    "stopCamera": "Stop camera",
+    "starting": "Starting the camera…",
+    "deniedTitle": "The camera is blocked",
+    "deniedBody": "This browser is not letting WorkAxis use the camera. Allow it from the address bar, or upload a photo of the label instead.",
+    "noCameraTitle": "No camera on this device",
+    "noCameraBody": "Upload a photo of the label instead.",
+    "cameraFailedTitle": "The camera did not start",
+    "cameraFailedBody": "Try again, or upload a photo of the label instead.",
+    "uploadTitle": "Upload a photo",
+    "uploadBody": "Works with no camera, and on a desktop.",
+    "uploadAction": "Choose a photo",
+    "foundAsset": "Asset found",
+    "foundPart": "Part found",
+    "open": "Open",
+    "unknownToast": "{code} is not a WorkAxis label."
+  },
+  "verify": {
+    "title": "Inventory verification",
+    "description": "Scan the parts on a shelf and record what you counted.",
+    "start": "Verify inventory",
+    "readOnlyTitle": "You cannot record counts",
+    "readOnlyBody": "Your role may open this screen but may not change stock levels.",
+    "sheetTitle": "Count sheet",
+    "sheetEmpty": "Scan a part label to add it to the sheet.",
+    "binLine": "Bin: {code}",
+    "expected": "On record: {quantity}",
+    "countedLabel": "Counted",
+    "record": "Record count",
+    "remove": "Remove",
+    "rowAdjusted": "Stock adjusted, and the movement was written to the records.",
+    "rowConfirmed": "The count matched the records. Nothing was changed.",
+    "adjusted": "{partNumber} adjusted.",
+    "confirmed": "{partNumber} confirmed.",
+    "countInvalid": "A count is a whole number, zero or more.",
+    "countRefused": "That count could not be recorded.",
+    "assetsDoNotCount": "That is an asset label. Scan a part to count it."
+  },
+  "dataTable": {
+    "columns": "Columns",
+    "clearFilters": "Clear filters",
+    "noFilterValues": "Nothing to filter on",
+    "rowsTotal": "{total, plural, =0 {No rows} one {# row} other {# rows}}",
+    "rowsFiltered": "Showing {shown} of {total}",
+    "pagination": "Pages",
+    "pageOf": "Page {page} of {pages}",
+    "previousPage": "Previous",
+    "nextPage": "Next",
+    "sortBy": "Sort by this column"
+  },
+  "assetsTable": {
+    "caption": "Equipment, with its site, condition and criticality",
+    "searchLabel": "Search the equipment register",
+    "searchPlaceholder": "Tag, name or room",
+    "rowActions": "Actions for {tag}",
+    "columns": {
+      "assetTag": "Tag",
+      "name": "Equipment",
+      "type": "Type",
+      "facility": "Site",
+      "location": "Room",
+      "status": "Status",
+      "criticality": "Criticality",
+      "installedOn": "Installed",
+      "actions": "Actions"
+    },
+    "actions": {
+      "newWorkOrder": "New work order",
+      "copyTag": "Copy tag",
+      "copied": "{tag} copied"
+    }
+  },
+  "partsTable": {
+    "caption": "Spare parts, with what is on hand and where it is kept",
+    "searchLabel": "Search the parts register",
+    "searchPlaceholder": "Stock number, name or bin",
+    "rowActions": "Actions for {number}",
+    "low": "Low",
+    "ok": "In stock",
+    "binUnreadable": "Unreadable",
+    "cardStock": "{onHand} {unit} on hand, minimum {minimum}",
+    "columns": {
+      "partNumber": "Stock number",
+      "name": "Part",
+      "stockState": "Stock",
+      "onHand": "On hand",
+      "minimum": "Minimum",
+      "category": "Category",
+      "bin": "Bin",
+      "unitCost": "Unit cost",
+      "actions": "Actions"
+    },
+    "actions": {
+      "printLabel": "Print label",
+      "copyNumber": "Copy stock number",
+      "copied": "{number} copied"
+    }
+  },
+  "partDetail": {
+    "metaTitle": "{number} · Part",
+    "pageDescription": "What is on hand, where it is kept, and every movement recorded against it.",
+    "missingBody": "No part in this system carries the stock number {number}.",
+    "backToRegister": "Back to the parts register",
+    "detailsTitle": "Details",
+    "category": "Category",
+    "site": "Site",
+    "bin": "Bin",
+    "onHand": "On hand",
+    "minimum": "Minimum",
+    "unitCost": "Unit cost",
+    "unreadable": "Not readable",
+    "quantityWithUnit": "{quantity} {unit}",
+    "onHandSummary": "{onHand} {unit} on hand, minimum {minimum}",
+    "ledger": {
+      "title": "Movements",
+      "none": "Nothing has moved against this part.",
+      "out": "{quantity} out",
+      "in": "{quantity} in",
+      "by": "by {name}",
+      "actorUnknown": "by somebody no longer in the records",
+      "noOrder": "not against a work order",
+      "orderUnreadable": "work order not readable"
+    }
+  },
+  "maintenanceTable": {
+    "caption": "Planned visits, soonest first, with what is late and what can be raised now",
+    "searchLabel": "Search the planned visits",
+    "searchPlaceholder": "Tag, equipment or plan",
+    "rowActions": "Actions for {asset}",
+    "neverDone": "Never",
+    "columns": {
+      "asset": "Tag",
+      "assetName": "Equipment",
+      "plan": "Plan",
+      "due": "Due",
+      "nextDue": "Next due",
+      "site": "Site",
+      "frequency": "Every",
+      "lastDone": "Last done",
+      "actions": "Actions"
+    },
+    "due": {
+      "late": "{days, plural, one {# day late} other {# days late}}",
+      "today": "Today",
+      "inDays": "{days, plural, one {In # day} other {In # days}}"
+    },
+    "dueKind": {
+      "late": "Late",
+      "today": "Today",
+      "soon": "Can be raised",
+      "ahead": "Not yet"
+    },
+    "actions": {
+      "generate": "Generate work order",
+      "generated": "{number} raised for {asset}",
+      "runDue": "Run {count} due",
+      "sweptCount": "{count} work orders raised",
+      "refused": "{schedule} could not be raised"
+    },
+    "unreadable": "{count, plural, one {One planned visit could not be read: its plan or its equipment is missing from the records.} other {# planned visits could not be read: their plan or their equipment is missing from the records.}}"
+  },
+  "maintenanceViews": {
+    "visits": "Planned visits",
+    "month": "Month",
+    "plans": "Plans",
+    "label": "Which view"
+  },
+  "maintenanceMonth": {
+    "previous": "Previous month",
+    "next": "Next month",
+    "thisMonth": "This month",
+    "weekOf": "Week of {date}",
+    "nothing": "Nothing is planned in {month}."
+  },
+  "plansTable": {
+    "caption": "The maintenance plans, what they service and how often",
+    "searchLabel": "Search the maintenance plans",
+    "searchPlaceholder": "Code or plan name",
+    "active": "Active",
+    "inactive": "Not in use",
+    "noEquipment": "No equipment",
+    "onPlan": "{count} on this plan",
+    "days": "{days, plural, one {# day} other {# days}}",
+    "minutes": "{minutes} min",
+    "columns": {
+      "code": "Code",
+      "name": "Plan",
+      "state": "State",
+      "equipment": "Equipment type",
+      "frequency": "Every",
+      "onPlan": "Equipment",
+      "leadTime": "Raised before",
+      "estimate": "Estimate"
+    }
+  },
+  "workOrderForm": {
+    "title": "Raise a work order",
+    "body": "Raised against a piece of equipment, with a title and a description in the language you work in.",
+    "submit": "Raise work order",
+    "created": "{number} raised",
+    "fields": {
+      "asset": "Equipment",
+      "chooseAsset": "Choose the equipment",
+      "assetNotFound": "No equipment with tag {tag}. Choose it from the list.",
+      "assignee": "Assign to",
+      "unassigned": "Nobody yet",
+      "type": "Type",
+      "priority": "Priority",
+      "dueOn": "Due date",
+      "estimatedMinutes": "Estimated minutes",
+      "title": "Title",
+      "description": "Description",
+      "contentLanguageHint": "Write in the language you work in. It is recorded as you typed it and is not translated.",
+      "notAssignableHint": "Not listed: {roles}. This role cannot change anything, so work is not assigned to it."
+    }
+  },
+  "workOrderDetail": {
+    "metaTitle": "Work order {number}",
+    "pageDescription": "One work order, and everything recorded against it.",
+    "backToQueue": "Back to work orders",
+    "asEntered": "{language, select, en {As written in English} fr {As written in French} other {As written}}",
+    "raisedOn": "Raised {date}",
+    "equipment": "Equipment",
+    "site": "Site",
+    "place": "Location",
+    "notRecorded": "Not recorded",
+    "unreadable": "This record could not be read",
+    "due": {
+      "label": "Due",
+      "none": "No due date",
+      "today": "Due today",
+      "ahead": "Due in {days, plural, one {# day} other {# days}}",
+      "late": "{days, plural, one {# day late} other {# days late}}",
+      "passed": "Was due {date}"
+    },
+    "assignee": {
+      "label": "Assigned to",
+      "nobody": "Nobody yet",
+      "crew": "Crew <mono>{code}</mono>",
+      "crewPerson": "Crew <mono>{code}</mono> — {name}",
+      "contractor": "Crew <mono>{code}</mono> — an outside contractor",
+      "crewUnknown": "Crew <mono>{code}</mono> — a crew this organization does not use"
+    },
+    "description": {
+      "title": "Description",
+      "none": "Nothing was written down."
+    },
+    "tasks": {
+      "title": "Tasks",
+      "none": "No tasks were listed on this order.",
+      "progress": "{done} of {total} done",
+      "done": "Done",
+      "notDone": "Not done",
+      "completedBy": "{name}, {date}"
+    },
+    "parts": {
+      "title": "Parts used",
+      "none": "No parts were issued against this order.",
+      "quantity": "{quantity, plural, one {# unit} other {# units}}",
+      "returned": "{quantity, plural, one {# unit returned} other {# units returned}}",
+      "partUnreadable": "A part record that is no longer here"
+    },
+    "labour": {
+      "title": "Time logged",
+      "none": "Nobody has logged time on this order.",
+      "total": "{minutes} min"
+    },
+    "history": {
+      "title": "Status history",
+      "raised": "Raised as {to}",
+      "moved": "{from} to {to}",
+      "by": "by {name}",
+      "actorUnknown": "by somebody no longer in the records",
+      "none": "Nothing has been recorded yet."
+    },
+    "comments": {
+      "title": "Comments",
+      "none": "Nobody has written anything on this order.",
+      "authorUnknown": "Somebody no longer in the records"
+    },
+    "detailsTitle": "Details",
+    "missingBody": "Nothing in WorkAxis matches {number}. Check the number, or open it from the work-order list.",
+    "write": {
+      "actions": {
+        "start": "Start work",
+        "pause": "Waiting for parts",
+        "resume": "Resume work",
+        "complete": "Complete",
+        "cancel": "Cancel order",
+        "assign": "Assign",
+        "logTime": "Log time"
+      },
+      "consequence": {
+        "start": "Recorded as started now, against your name.",
+        "pause": "The order stays open and stops counting as work in progress.",
+        "resume": "Back to in progress, from waiting for parts."
+      },
+      "complete": {
+        "title": "Complete {number}",
+        "description": "This closes the order and records the time against your name. A completed order cannot be reopened.",
+        "minutes": "How long did it take?",
+        "minutesHint": "In minutes. Recorded as time you worked, not as a total on the order.",
+        "note": "What should the next person know?",
+        "noteHint": "Written in the language you work in. It is recorded as you typed it and is not translated.",
+        "submit": "Complete order",
+        "done": "{number} completed, {minutes} min recorded."
+      },
+      "assign": {
+        "title": "Assign {number}",
+        "description": "Choose who this work belongs to. They are told, and it moves to Assigned.",
+        "assignee": "Assign to",
+        "choose": "Choose a person",
+        "atThisSite": "At this site",
+        "elsewhere": "Other sites",
+        "submit": "Assign",
+        "done": "{number} assigned to {name}",
+        "notAssignableHint": "Not listed: {roles}. This role cannot change anything, so work is not assigned to it."
+      },
+      "cancel": {
+        "title": "Cancel {number}",
+        "description": "Cancelling is recorded with your reason and cannot be undone.",
+        "reason": "Why is it being cancelled?",
+        "note": "Anything to add?",
+        "noteHint": "Optional. The reason above is the record; this is the detail.",
+        "submit": "Cancel order",
+        "done": "{number} cancelled."
+      },
+      "logTime": {
+        "title": "Log time on {number}",
+        "description": "Recorded against your name. It does not change the status.",
+        "submit": "Log time",
+        "done": "{minutes} min recorded on {number}."
+      },
+      "tasks": {
+        "toggleHint": "Ticking records your name and the time."
+      },
+      "refused": "That is not a move this order can make from {status}.",
+      "issuePart": {
+        "action": "Issue a part",
+        "title": "Issue a part to {number}",
+        "description": "Stock comes out of the store and the movement is recorded against this order.",
+        "part": "Which part?",
+        "option": "{partNumber} — {name} ({onHand} on hand)",
+        "quantity": "How many?",
+        "submit": "Issue",
+        "done": "{quantity} × {partNumber} issued to {number}",
+        "noneInStock": "Nothing in this store has any stock on hand.",
+        "onHand": "{onHand} on hand"
+      }
+    }
+  },
+  "offlineRefusal": {
+    "title": "You are offline",
+    "body": "This screen has not been opened on this device, so there is no copy of it here to show.",
+    "stillWorks": "Everything already open still works. Anything you change is saved on this device and sent when the connection returns.",
+    "back": "Go back"
+  },
+  "offline": {
+    "title": "Working offline",
+    "body": "Changes are saved on this device and sent when the connection returns.",
+    "pending": "{count, plural, =0 {Nothing waiting to send} one {# change waiting to send} other {# changes waiting to send}}",
+    "pendingUnknown": "Checking what is waiting to send",
+    "syncTitle": "Synchronization",
+    "syncBody": "What has been sent since the demonstration started, newest first.",
+    "syncEmptyTitle": "Nothing has been sent yet",
+    "syncEmptyBody": "Changes made here appear once they reach the server.",
+    "outcome": {
+      "applied": "Sent",
+      "conflicted": "Refused, two versions",
+      "keptMine": "Kept this device's version",
+      "keptTheirs": "Kept the server's version"
+    },
+    "conflictTitle": "Two versions of {record}",
+    "conflictBody": "This change was made here while offline. The server already had a different one. Nothing is sent until you choose.",
+    "conflictMine": "On this device",
+    "conflictTheirs": "On the server",
+    "conflictMineDetail": "Your change, made while offline",
+    "conflictTheirsDetail": "{who} set it to {status} at {at}",
+    "conflictKeepMine": "Keep this device's version",
+    "conflictKeepTheirs": "Keep the server's version",
+    "simulated": "The server in this demonstration is simulated.",
+    "queueLink": "See what is waiting",
+    "queueEmptyOfflineTitle": "Nothing is waiting yet",
+    "queueEmptyOfflineBody": "You are working offline. Anything you change now is saved on this device and listed here until the connection returns.",
+    "queueStopped": "Nothing else is sent until the two versions of {record} are settled.",
+    "queuedWhileOffline": "Saved while offline",
+    "queuedByRole": "Saved by {role}",
+    "queueLastTitle": "What happened last",
+    "unreadableChange": "A change was recorded"
+  },
+  "import": {
+    "title": "Import from MP2",
+    "description": "Bring equipment, parts and work orders across from a spreadsheet export.",
+    "open": "Import from MP2",
+    "stepOf": "Step {current} of {total}",
+    "back": "Back",
+    "next": "Continue",
+    "steps": {
+      "upload": "Choose a file",
+      "map": "Match the columns",
+      "report": "Check the data",
+      "preview": "Look before committing",
+      "commit": "Commit"
+    },
+    "upload": {
+      "title": "Choose a spreadsheet",
+      "body": "An .xlsx export from MP2, with a sheet for equipment, one for parts and one for work orders.",
+      "action": "Choose a file",
+      "reading": "Reading the file…",
+      "unreadableTitle": "That file could not be read",
+      "unreadableBody": "It is not a spreadsheet this can open, or it is damaged. Try exporting it again.",
+      "noSheetsTitle": "No sheets we recognize",
+      "noSheetsBody": "This file has no tab named for equipment, parts or work orders. Check it is the MP2 export rather than another workbook.",
+      "found": "{sheets} sheets, {rows} rows",
+      "sheetRows": "{rows} rows"
+    },
+    "map": {
+      "title": "Match the columns",
+      "body": "Most columns are matched by name. The ones below are not, because MP2 spells them differently from one installation to the next.",
+      "column": "Column in the file",
+      "field": "WorkAxis field",
+      "unmapped": "Not matched",
+      "ignore": "Do not import",
+      "required": "Required",
+      "allMatched": "Every column is matched.",
+      "stillNeeded": "{count} still to match",
+      "blockedTitle": "A required column has nothing behind it",
+      "blockedBody": "The import cannot run until every required field has a column."
+    },
+    "report": {
+      "title": "What is wrong with this data",
+      "body": "Found by reading every row. Nothing has been written yet.",
+      "cleanTitle": "Nothing to report",
+      "cleanBody": "Every row read cleanly. You can go straight to the preview.",
+      "notRunTitle": "Not checked yet",
+      "notRunBody": "Match the columns first, and the rows will be read.",
+      "rowsAffected": "{rows} rows with something to say",
+      "blocking": "{count} cannot be imported",
+      "recoverable": "{count} will import, with a note",
+      "sheet": "Sheet",
+      "row": "Row",
+      "column": "Column",
+      "problem": "Problem",
+      "fixAction": "Fix this row",
+      "fixLabel": "Replacement value for {column}, row {row}",
+      "fixSave": "Use this value",
+      "fixCancel": "Leave it",
+      "fixed": "Row {row} updated. The rows were read again.",
+      "blockingBadge": "Cannot import",
+      "recoverableBadge": "Imports anyway"
+    },
+    "preview": {
+      "title": "What will be created",
+      "body": "Nothing is written until you commit.",
+      "assets": "Equipment",
+      "parts": "Parts",
+      "workOrders": "Work orders",
+      "assignments": "Assignments",
+      "total": "{count} records in all",
+      "blocked": "{count} rows left out",
+      "emptyTitle": "Nothing would be created",
+      "emptyBody": "Every row is either blocked or already here. There is nothing to commit.",
+      "noResultsTitle": "Nothing matches",
+      "noResultsBody": "No record in this preview matches the search.",
+      "caption": "The records this import would create",
+      "identifier": "Identifier",
+      "name": "Name",
+      "kind": "Kind",
+      "place": "Location",
+      "noTimeLogged": "No time logged",
+      "timeNote": "Imported work orders arrive with no time logged against them."
+    },
+    "commit": {
+      "title": "Commit the import",
+      "body": "{count} records will be written, as one change, with one entry in the trail.",
+      "action": "Commit {count} records",
+      "working": "Writing…",
+      "doneTitle": "Imported",
+      "doneBody": "{count} records from {fileName}.",
+      "undo": "Undo this import",
+      "undoing": "Undoing…",
+      "undoneTitle": "Import undone",
+      "undoneBody": "The {count} records it created have been removed.",
+      "failedTitle": "Nothing was written",
+      "failedBody": "The import was refused and the records are exactly as they were."
+    },
+    "issue": {
+      "missingRequired": "This column is empty, and it is required",
+      "duplicateKey": "{value} appears more than once",
+      "unknownAsset": "No equipment here is called {tag}",
+      "unreadableDate": "{raw} is not a date this can read",
+      "completedInFuture": "Completed, with a completion date in the future: {date}",
+      "negativeQuantity": "A count cannot be below zero: {value}",
+      "unknownSite": "{code} is at a site that does not exist",
+      "notANumber": "{raw} is not a number",
+      "unmatchedCrewCode": "Nobody here answers to {code}; the order will arrive unassigned",
+      "cancelledWithoutReason": "Cancelled, with no reason in the source; it will be recorded as such"
+    }
+  },
+  "emailLog": {
+    "title": "Email log",
+    "description": "What this demonstration would have sent, to whom, and in which language. Nothing is sent: there is no mail server in the demonstration, and this is the record of the decision.",
+    "emptyTitle": "No mail would have been sent yet",
+    "emptyBody": "A line appears here each time an alert is raised for somebody who wants it by email.",
+    "columns": {
+      "queuedAt": "When",
+      "to": "To",
+      "language": "Language",
+      "subject": "Subject"
+    },
+    "languageNote": "Written in the recipient's language, not the reader's",
+    "phaseTwo": "Phase 2 sends these for real. The screens do not change."
+  },
+  "myNotifications": {
+    "title": "My notifications",
+    "description": "Choose what you hear about, and how. These are your own choices and nobody else's.",
+    "inApp": "In the app",
+    "email": "By email",
+    "kindColumn": "Alert",
+    "readOnlyTitle": "An auditor reads, and does not change settings",
+    "readOnlyBody": "The switches are shown so the rule is visible rather than hidden. An auditor's role is to read the records and the trail, so nothing here can be changed.",
+    "languageLabel": "Mail would be written in",
+    "savedToast": "Your choices were saved"
+  },
+  "roleTable": {
+    "title": "What each role may do",
+    "description": "The same rule the buttons obey, read across. A tick is a thing that role can do; a blank is a control they see, disabled, with the reason.",
+    "readsOnly": "Reads only",
+    "capability": {
+      "workOrder": {
+        "create": "Raise a work order",
+        "assign": "Assign work to somebody",
+        "complete": "Finish a job",
+        "cancel": "Call a job off"
+      },
+      "asset": {
+        "edit": "Change a piece of equipment"
+      },
+      "document": {
+        "attach": "Attach a document or a photograph"
+      },
+      "inspection": {
+        "complete": "Record an inspection"
+      },
+      "inventory": {
+        "issue": "Issue a part against a job",
+        "adjust": "Correct a stock count"
+      },
+      "plan": {
+        "edit": "Change a maintenance plan"
+      },
+      "users": {
+        "manage": "Change a person's role, site, or whether they are still here"
+      },
+      "settings": {
+        "manage": "Change the rules the app follows"
+      },
+      "demo": {
+        "reset": "Reset the demonstration"
+      }
+    },
+    "caption": "What each role may do. A tick is a thing that role can do; a dash is a control they see, disabled, with the reason.",
+    "capabilityColumn": "Action",
+    "may": "May",
+    "mayNot": "May not"
+  },
+  "trades": {
+    "general": "General maintenance",
+    "hvac": "Heating, ventilation and air conditioning",
+    "electrical": "Electrical",
+    "controls": "Controls and instrumentation",
+    "inspection": "Inspection"
+  },
+  "peopleTable": {
+    "caption": "The people in the organization, with the site each works out of.",
+    "searchLabel": "Search people",
+    "searchPlaceholder": "Name, employee number, email or site",
+    "readsOnly": "reads only",
+    "active": "Active",
+    "inactive": "Inactive",
+    "siteUnknown": "Site not found",
+    "columns": {
+      "name": "Name",
+      "employeeNumber": "Employee number",
+      "role": "Role",
+      "site": "Home site",
+      "state": "Status",
+      "email": "Email",
+      "trades": "Trades",
+      "manage": "Manage"
+    }
+  },
+  "users": {
+    "invite": {
+      "label": "Invite a person",
+      "unavailable": "Invitations arrive with real sign-in, in Phase 2."
+    }
+  },
+  "organizationProfile": {
+    "title": "Organization",
+    "description": "The organization this demonstration runs for, and the sites it covers. Read-only in Phase 1.",
+    "name": "Name",
+    "code": "Code",
+    "siteCount": "Sites",
+    "cityProvince": "{city}, {province}",
+    "columns": {
+      "code": "Code",
+      "site": "Site",
+      "city": "Location"
+    }
+  },
+  "workflowRules": {
+    "title": "Work-order rules",
+    "description": "Which moves a work order may make here, and what finishing one takes. Changing a rule takes effect immediately and is recorded in the trail.",
+    "readOnly": "Your role can read these rules but not change them.",
+    "requireNote": "Require a note when finishing a job",
+    "waitingForParts": "Use the Waiting for parts stage",
+    "movesCaption": "Every move a work order may make, and whether it is allowed here.",
+    "move": "{from} to {to}",
+    "targets": "Targets by priority",
+    "targetsNote": "Shown beside a priority so people know what is expected. Nothing is measured against them yet.",
+    "targetFor": "Target for {priority}, in hours",
+    "columns": {
+      "move": "Move",
+      "allowed": "Allowed"
+    }
+  },
+  "notificationDefaults": {
+    "title": "Notification defaults",
+    "description": "What somebody hears about before they choose for themselves. These are starting points: a person's own choices are theirs and are not changed here.",
+    "readOnly": "Your role can read these defaults but not change them.",
+    "columns": {
+      "kind": "About"
+    }
+  },
+  "managePeople": {
+    "action": "Edit",
+    "title": "Change a person",
+    "description": "{name}: their role, their site, and whether they are still with the organization.",
+    "role": "Role",
+    "site": "Home site",
+    "active": "Still with the organization",
+    "activeHint": "Somebody who is not is no longer offered work, and stops appearing in the lists that hand work out.",
+    "save": "Save",
+    "saved": "Saved",
+    "nothingChanged": "Nothing changed"
+  }
+}

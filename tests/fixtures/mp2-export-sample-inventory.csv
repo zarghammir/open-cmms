@@ -1,0 +1,41 @@
+STOCK_NO,DESCRIPTION,QTY_ON_HAND,MIN_QTY,UNIT_COST,BIN
+FLT-5742,"Air Filter, Pleated MERV 13, 24x24x2",8,10,1378.30,KGN-B14-05
+FLT-1334,"Air Filter, HEPA 99.97% 24x24x12",9,8,29.93,SUD-D03-09
+FLT-8686,"Prefilter, Washable Aluminum Mesh",9,8,503.64,MCT-A02-03
+BLT-1395,"V-Belt, A-Section 48 in",0,2,168.52,KAM-D16-05
+BLT-9051,"Cogged Belt, BX-Section 60 in",45,20,64.68,REG-C04-06
+GSK-8002,"Door Gasket, Autoclave Silicone",13,6,75.25,KGN-B01-04
+GSK-1363,"Gasket Kit, Chiller Waterbox",13,3,9.23,SUD-A02-04
+GSK-2158,"Door Seal, Cold Room 96 in",7,2,149.19,MCT-B03-01
+LMP-1401,"UV Lamp, Biosafety Cabinet 30W",11,12,18.70,KAM-A16-05
+LMP-2946,"LED Lamp, Laboratory Troffer 40W",15,10,58,REG-D10-02
+SEN-6403,"Temperature Sensor, RTD Pt100",-4,8,115.16,KGN-C11-01
+SEN-8080,"Differential Pressure Sensor, 0-2 in WC",23,8,109.55,SUD-B07-02
+SEN-2495,"Thermocouple, Type K 12 in Probe",31,8,87.42,MCT-C17-08
+SEN-3559,"Airflow Sensor, Fume Hood Monitor",19,2,10.14,KAM-A16-07
+VLV-3170,"Solenoid Valve, 3/4 in Brass 120V",5,4,23.44,REG-D01-08
+VLV-7167,"Ball Valve, 1 in Stainless",15,3,81.89,KGN-C17-05
+VLV-7336,"Check Valve, 2 in Bronze Swing",31,20,79.68,SUD-D18-06
+VLV-5469,"Steam Trap, Thermostatic 1/2 in",12,5,1402.24,MCT-B06-02
+PMP-1780,"Condensate Pump, 1/50 HP",19,5,117.03,KAM-D01-01
+PMP-4234,"Pump Seal Kit, Circulator",17,5,46.46,REG-A01-01
+PMP-5962,"Vacuum Pump Oil, 1 L",15,10,85.31,KGN-B06-03
+MTR-4352,"Motor Bearing, 6205-2RS",6,5,10.53,SUD-C02-09
+MTR-8368,"Drive Coupling, Jaw Type L095",32,12,147.59,MCT-C05-03
+MTR-3122,"Exhaust Fan Motor, 1 HP 208V",44,20,89.64,KAM-A16-07
+ELC-1827,"Contactor, 3-Pole 40A 120V Coil",21,4,153.08,REG-D08-06
+ELC-7347,"Control Relay, DPDT 24VDC",28,10,N/A,KGN-C11-05
+ELC-1954,"Fuse, Class CC 30A Time Delay",12,2,158.74,SUD-A04-04
+ELC-5721,"Battery, Sealed Lead Acid 12V 7Ah",18,12,100.41,MCT-A14-02
+ELC-2030,"Damper Actuator, 24V Modulating",26,12,103.93,KAM-B10-07
+WTR-2593,"Water Filter Cartridge, 10 in Carbon",23,3,894.87,REG-C13-03
+WTR-7426,"RO Membrane Element, 2.5 x 21 in",20,2,832.09,KGN-D12-04
+WTR-7528,"DI Resin Cartridge, Mixed Bed",6,5,775.40,SUD-A06-02
+WTR-8939,"Backflow Preventer Repair Kit, 1 in",9,4,153.36,MCT-A13-05
+FIR-5031,"Sprinkler Head, Pendent 155F",24,8,455.57,KAM-A16-05
+FIR-8650,"Smoke Detector, Photoelectric Addressable",21,12,162.78,REG-C17-04
+FIR-3450,"Fire Extinguisher, ABC 10 lb",3,3,174.18,KGN-D13-09
+MSC-5949,"Refrigerant, R-134a 30 lb Cylinder",39,20,186.19,SUD-D15-09
+MSC-8394,"Lubricant Grease, Lithium EP2 14 oz",14,8,1254.47,MCT-B03-08
+MSC-8064,"Chart Recorder Paper, 7 Day Circular",28,2,316.46,KAM-D07-08
+MSC-2091,"Door Closer, Heavy Duty Surface Mount",15,3,37.38,REG-D11-01

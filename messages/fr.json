@@ -1,0 +1,1504 @@
+{
+  "app": {
+    "name": "WorkAxis",
+    "tagline": "Gestion de l’entretien",
+    "description": "Gestion de l’entretien des installations de laboratoire : actifs, bons de travail, entretien préventif, inspections et pièces de rechange."
+  },
+  "common": {
+    "actions": "Actions",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "confirm": "Confirmer",
+    "retry": "Réessayer",
+    "save": "Enregistrer les modifications",
+    "search": "Rechercher",
+    "clear": "Effacer",
+    "openMenu": "Ouvrir le menu",
+    "notBuiltYet": "Pas encore construit. Cet écran arrivera avec les dossiers.",
+    "more": "Plus"
+  },
+  "shell": {
+    "skipToContent": "Passer au contenu principal",
+    "primaryNavigation": "Modules",
+    "toggleNavigation": "Afficher ou masquer la liste des modules",
+    "mainContent": "Contenu principal",
+    "views": {
+      "fieldHint": "Conçue pour un téléphone dans un corridor : le travail du jour, un bon à la fois."
+    },
+    "search": {
+      "label": "Rechercher",
+      "placeholder": "Actifs, bons de travail, pièces",
+      "hint": "La recherche arrivera avec les registres des actifs et des bons de travail."
+    },
+    "notifications": {
+      "label": "Notifications",
+      "title": "Notifications",
+      "count": "{count, plural, =0 {Aucune notification non lue} one {# notification non lue} other {# notifications non lues}}",
+      "loading": "Vérification des nouveautés",
+      "emptyTitle": "Rien ne requiert votre attention",
+      "emptyBody": "Les travaux en retard, les inspections échouées et les pièces sous leur minimum seront énumérés ici.",
+      "toastRegion": "Messages de l’application",
+      "markAllRead": "Tout marquer comme lu",
+      "allReadTitle": "Rien de non lu",
+      "allReadBody": "Tout a été lu ici. De nouvelles alertes apparaissent à mesure que les enregistrements changent.",
+      "openRecord": "Ouvrir l’enregistrement concerné",
+      "unreadInGroup": "{count, plural, =0 {tout est lu} one {# non lu} other {# non lus}}",
+      "settingsLink": "Réglages des notifications"
+    },
+    "user": {
+      "menuLabel": "Session et préférences",
+      "demoSession": "Session de démonstration",
+      "demoSessionHint": "Aucune authentification dans la démonstration. Changez de rôle pour voir l’application comme quelqu’un d’autre.",
+      "role": "Rôle",
+      "switchRole": "Changer de rôle",
+      "language": "Langue",
+      "roleChanged": "Affichage avec le rôle {role}"
+    },
+    "language": {
+      "label": "Langue",
+      "options": {
+        "en-CA": "English",
+        "fr-CA": "Français"
+      },
+      "short": {
+        "en-CA": "EN",
+        "fr-CA": "FR"
+      },
+      "switchTo": "Afficher l’application en {language}"
+    },
+    "breadcrumb": {
+      "label": "Vous êtes ici",
+      "home": "Accueil"
+    },
+    "connection": {
+      "online": "Connecté",
+      "offline": "Travail hors ligne",
+      "offlineHint": "Les modifications sont conservées sur l’appareil et envoyées au retour de la connexion."
+    },
+    "navigationSheetHint": "La liste des modules, affichée en panneau sur un écran étroit."
+  },
+  "roles": {
+    "administrator": {
+      "name": "Administrateur",
+      "summary": "Accès complet, y compris les utilisateurs, les rôles et les paramètres."
+    },
+    "facilityManager": {
+      "name": "Gestionnaire d’installation",
+      "summary": "Dirige un ou plusieurs sites : actifs, travaux, plans et rapports."
+    },
+    "maintenanceCoordinator": {
+      "name": "Coordonnateur de l’entretien",
+      "summary": "Planifie et attribue le travail quotidien entre les métiers."
+    },
+    "technician": {
+      "name": "Technicien",
+      "summary": "Exécute sur place les bons de travail qui lui sont attribués."
+    },
+    "inspector": {
+      "name": "Inspecteur",
+      "summary": "Réalise les inspections et signale les constats."
+    },
+    "auditor": {
+      "name": "Vérificateur",
+      "summary": "Consulte les dossiers et les rapports. Ne modifie rien."
+    }
+  },
+  "permissions": {
+    "deniedTitle": "Non accessible à votre rôle",
+    "deniedBody": "Cet écran est réservé à d’autres rôles. Votre rôle actuel est {role}.",
+    "deniedHint": "Changez de rôle dans le menu de session pour y accéder.",
+    "actionDenied": "Le rôle {role} ne peut pas faire cela. Changez de rôle pour continuer.",
+    "readOnly": "Lecture seule pour le rôle {role}."
+  },
+  "states": {
+    "loading": {
+      "label": "Chargement"
+    },
+    "saving": {
+      "label": "Enregistrement…",
+      "failedTitle": "Cette modification n’a pas été enregistrée sur cet appareil",
+      "failedBody": "Elle est affichée à l’écran, mais elle n’est pas stockée : elle disparaîtra si vous rechargez la page. Réessayez et vérifiez que ce navigateur est autorisé à stocker des données pour ce site.",
+      "deviceTitle": "Cet appareil n’enregistre pas les modifications",
+      "deviceBody": "La dernière modification n’a pas été stockée : elle disparaîtra au rechargement. Vérifiez que ce navigateur est autorisé à stocker des données pour ce site."
+    },
+    "unreadable": {
+      "title": "Les enregistrements sauvegardés n’ont pas pu être lus",
+      "body": "WorkAxis conserve les enregistrements de cette démonstration dans ce navigateur et, cette fois, il n’a pas pu les relire. Rien n’a été modifié ni perdu : les enregistrements sont toujours là et rien de nouveau ne sera écrit par-dessus tant qu’ils ne pourront pas être lus.",
+      "reload": "Réessayer",
+      "persists": "Si cela se reproduit, ouvrez les Paramètres : vous y verrez si ce navigateur stocke quoi que ce soit."
+    },
+    "error": {
+      "title": "Cet écran ne s’est pas chargé",
+      "body": "Rien n’a été modifié. Réessayez, et si l’erreur persiste, rechargez la page.",
+      "action": "Réessayer"
+    },
+    "noResults": {
+      "title": "Aucune correspondance",
+      "body": "Aucun enregistrement ne correspond à la recherche et aux filtres actuels.",
+      "action": "Effacer les filtres"
+    },
+    "notFound": {
+      "title": "Page introuvable",
+      "body": "L’adresse que vous avez ouverte n’existe pas dans WorkAxis.",
+      "action": "Aller à l’accueil"
+    },
+    "comingIn": "Arrive dans {ticket}"
+  },
+  "modules": {
+    "dashboard": {
+      "title": "Tableau de bord",
+      "description": "Ce qui requiert de l’attention aujourd’hui, dans tous les sites.",
+      "emptyTitle": "Rien à afficher pour ce site",
+      "emptyBody": "Chaque total de cet écran est calculé à partir des enregistrements de ce navigateur, donc un écran vide signifie un site vide.",
+      "point1": "Bons de travail ouverts, en retard et critiques, chacun menant à la file",
+      "point2": "Pièces de rechange sous leur minimum, et inspections encore à faire",
+      "point3": "Une liste des cas à traiter, classée selon le retard accumulé"
+    },
+    "facilities": {
+      "title": "Installations",
+      "description": "Sites, bâtiments, étages et locaux.",
+      "emptyTitle": "Aucun site pour l’instant",
+      "emptyBody": "Chaque actif et chaque bon de travail dépend d’un emplacement; l’arborescence des emplacements est donc construite en premier.",
+      "point1": "Cinq sites de laboratoire répartis dans plusieurs provinces, avec bâtiments, étages et locaux",
+      "point2": "Les actifs présents dans un emplacement, à un clic de celui-ci",
+      "point3": "Personnes-ressources et heures d’ouverture de chaque site"
+    },
+    "assets": {
+      "title": "Actifs",
+      "description": "Le registre des équipements : de quoi il s’agit, où ils sont, leur criticité.",
+      "emptyTitle": "Aucun actif pour l’instant",
+      "emptyBody": "Le registre est la colonne vertébrale du système : bons de travail, plans, inspections et documents se rattachent tous à un actif.",
+      "point1": "Étiquette, type, emplacement, criticité et état de chaque équipement",
+      "point2": "Historique complet par actif : travaux réalisés, pièces utilisées, inspections réussies",
+      "point3": "Une étiquette QR imprimable pour ouvrir l’actif par balayage"
+    },
+    "workOrders": {
+      "title": "Bons de travail",
+      "description": "Travaux correctifs et préventifs, de la demande à l’achèvement.",
+      "emptyTitle": "Aucun bon de travail pour l’instant",
+      "emptyBody": "Un bon de travail porte tout le travail : l’actif, la personne qui l’exécute, les tâches, les pièces et le compte rendu de ce qui a été fait.",
+      "point1": "Une file filtrée par état, priorité, site et personne assignée",
+      "point2": "Des étapes d’état fixes, avec un motif obligatoire avant toute annulation",
+      "point3": "Listes de tâches, pièces utilisées et historique horodaté"
+    },
+    "preventiveMaintenance": {
+      "title": "Entretien préventif",
+      "description": "Plans récurrents qui déclenchent le travail avant la panne.",
+      "emptyTitle": "Aucun plan d’entretien pour l’instant",
+      "emptyBody": "Les plans transforment un calendrier en bons de travail automatiquement; c’est ainsi que les dates de conformité sont respectées.",
+      "point1": "Plans par actif ou par type d’actif, avec les tâches exigées à chaque visite",
+      "point2": "Fréquence selon le calendrier ou selon un relevé de compteur",
+      "point3": "Un calendrier prévisionnel des échéances, par site et par semaine"
+    },
+    "inspections": {
+      "title": "Inspections",
+      "description": "Gabarits, inspections réalisées et constats qui en découlent.",
+      "emptyTitle": "Aucun gabarit d’inspection pour l’instant",
+      "emptyBody": "Une inspection est une série fixe de questions avec une réponse consignée pour chacune; c’est ce qui rend le résultat vérifiable.",
+      "point1": "Gabarits réutilisables avec questions de réussite, d’échec et de valeur mesurée",
+      "point2": "Inspections réalisées, avec leur auteur et leur date",
+      "point3": "Des constats qui deviennent des bons de travail sans être ressaisis"
+    },
+    "inventory": {
+      "title": "Inventaire",
+      "description": "Pièces de rechange, niveaux de stock et pièces remises à chaque travail.",
+      "emptyTitle": "Aucune pièce pour l’instant",
+      "emptyBody": "Un stock ne veut rien dire sans un minimum; les pièces arrivent donc avec leur point de commande.",
+      "point1": "Stock en main par rapport au minimum, par magasin",
+      "point2": "Pièces remises à un bon de travail et retirées du stock",
+      "point3": "Une piste des opérations pour chaque réception, sortie et ajustement"
+    },
+    "documents": {
+      "title": "Documents",
+      "description": "Manuels, certificats et plans, joints là où ils servent.",
+      "emptyTitle": "Aucun document pour l’instant",
+      "emptyBody": "Un document n’est utile qu’à côté de l’actif ou du site auquel il appartient; les documents sont donc classés avec les enregistrements plutôt que dans des dossiers.",
+      "point1": "Manuels, certificats d’étalonnage et plans, par actif et par site",
+      "point2": "Version et date d’expiration, pour repérer un certificat périmé",
+      "point3": "Téléchargement depuis l’actif, le bon de travail ou l’inspection"
+    },
+    "reports": {
+      "title": "Rapports",
+      "description": "Rapports opérationnels sur les travaux, la conformité et les stocks.",
+      "emptyTitle": "Aucun rapport pour l’instant",
+      "emptyBody": "Les rapports lisent les mêmes enregistrements que les écrans; un chiffre peut donc toujours être retracé jusqu’aux bons de travail qui le composent.",
+      "point1": "Arriéré, délai d’achèvement et travaux en retard par site",
+      "point2": "Conformité des inspections par rapport au calendrier prévu",
+      "point3": "Exportation en CSV et impression, en français ou en anglais"
+    },
+    "users": {
+      "title": "Utilisateurs et rôles",
+      "description": "Qui utilise WorkAxis et ce que chaque rôle peut faire.",
+      "emptyTitle": "Aucun utilisateur pour l’instant",
+      "emptyBody": "Les rôles constituent le modèle de sécurité : chaque écran et chaque action interrogent d’abord le rôle.",
+      "point1": "Des utilisateurs de démonstration répartis dans les six rôles, affectés à des sites",
+      "point2": "Une liste en langage clair de ce que chaque rôle peut et ne peut pas faire",
+      "point3": "Les changements de rôle prennent effet immédiatement, avec une entrée de vérification"
+    },
+    "waitingToSend": {
+      "title": "En attente d’envoi",
+      "description": "Les modifications enregistrées sur cet appareil dont le serveur n’a pas encore été informé.",
+      "emptyTitle": "Tout a été envoyé",
+      "emptyBody": "Rien sur cet appareil n’attend le serveur.",
+      "point1": "Ce que fera chaque modification, dans l’ordre où elle sera envoyée",
+      "point2": "Si elle a été faite hors ligne",
+      "point3": "Ce qu’il est advenu de la dernière modification envoyée"
+    },
+    "settings": {
+      "title": "Paramètres",
+      "description": "Organisation, langues et données de démonstration.",
+      "emptyTitle": "Le reste des paramètres arrive avec les écrans qu’ils décrivent",
+      "emptyBody": "La réinitialisation de la démonstration fonctionne déjà, ci-dessus. Les autres paramètres décrivent l’organisation et son vocabulaire; ils arrivent donc avec les écrans qui les lisent.",
+      "point1": "Langue par défaut et fuseau horaire de l’organisation",
+      "point2": "Listes de vocabulaire comme les types d’actifs et les causes de défaillance, dans les deux langues",
+      "point3": "Numérotation des bons de travail et échéance par défaut"
+    },
+    "myWork": {
+      "title": "Mon travail aujourd’hui",
+      "description": "Le travail qui vous est attribué, un bon à la fois.",
+      "emptyTitle": "Rien ne vous est attribué",
+      "emptyBody": "Le travail qui vous est attribué apparaîtra ici sous forme de fiches, utilisables d’un seul pouce.",
+      "point1": "Le travail attribué aujourd’hui, le plus urgent d’abord",
+      "point2": "Un bon de travail à la fois : tâches, pièces, photos",
+      "point3": "Fonctionne sans signal et envoie au retour de la connexion"
+    },
+    "myNotifications": {
+      "title": "Mes notifications",
+      "description": "Ce dont vous êtes informé, et comment. Vos choix, pas ceux de l’organisation.",
+      "emptyTitle": "Rien à choisir pour l’instant",
+      "emptyBody": "Les alertes que vous pouvez activer ou désactiver apparaissent ici une fois les enregistrements lus.",
+      "point1": "Choisissez les alertes qui vous parviennent dans l’application",
+      "point2": "Choisissez celles qui seraient aussi envoyées par courriel",
+      "point3": "Un auditeur voit les choix et ne peut pas les modifier"
+    }
+  },
+  "dashboard": {
+    "filter": {
+      "label": "Site",
+      "allSites": "Tous les sites"
+    },
+    "kpi": {
+      "openWorkOrders": "Bons de travail ouverts",
+      "overdue": "En retard",
+      "criticalOpen": "Critiques, ouverts",
+      "partsBelowMinimum": "Pièces sous le minimum",
+      "inspectionsScheduled": "Inspections prévues"
+    },
+    "work": {
+      "unknownSite": "Site non consigné",
+      "daysLate": "{days, plural, one {# jour de retard} other {# jours de retard}}",
+      "dueOn": "Échéance {date}",
+      "noDueDate": "Aucune date d’échéance"
+    },
+    "exceptions": {
+      "title": "À traiter",
+      "description": "Le travail en retard d’abord, puis le travail critique encore ouvert.",
+      "emptyTitle": "Rien en retard, rien de critique",
+      "emptyBody": "Aucun bon de travail ici n’a dépassé son échéance ni n’est marqué critique."
+    },
+    "chart": {
+      "title": "Bons de travail par statut",
+      "description": "Tous les statuts, y compris ceux qui ne contiennent rien.",
+      "emptyTitle": "Aucun bon de travail",
+      "emptyBody": "Aucun travail n’est encore consigné ici.",
+      "summaryLabel": "Bons de travail par statut",
+      "summaryEntry": "{status} — {count}",
+      "axisEntry": "{status} — {count}"
+    },
+    "upcoming": {
+      "title": "Entretien à venir",
+      "description": "Visites planifiées au cours des deux prochaines semaines.",
+      "emptyTitle": "Rien à faire d’ici deux semaines",
+      "emptyBody": "Aucun plan d’entretien n’atteint sa prochaine visite dans cette période.",
+      "unknownAsset": "Équipement non consigné",
+      "unknownPlan": "Plan non consigné",
+      "dueToday": "Prévu aujourd’hui",
+      "dueIn": "{date} — dans {days, plural, one {# jour} other {# jours}}"
+    },
+    "activity": {
+      "title": "Activité récente",
+      "description": "Chaque modification des enregistrements, la plus récente en premier.",
+      "emptyTitle": "Rien n’a encore changé",
+      "emptyBody": "Les modifications faites dans la démonstration apparaissent ici au fur et à mesure.",
+      "systemActor": "WorkAxis",
+      "unknownActor": "Non attribué",
+      "unreadableChange": "Une modification a été consignée",
+      "byline": "{who} · {when}"
+    },
+    "myWork": {
+      "title": "Qui m’est assigné",
+      "description": "Votre travail ouvert, le plus urgent en premier.",
+      "emptyTitle": "Rien ne vous est assigné",
+      "emptyBody": "Le travail qui vous est assigné apparaît ici, une carte à la fois."
+    }
+  },
+  "actions": {
+    "newWorkOrder": "Nouveau bon de travail",
+    "addAsset": "Ajouter un actif"
+  },
+  "demo": {
+    "title": "Commandes de démonstration",
+    "body": "Remet la démonstration à son état de départ, soit les enregistrements d’origine, l’anglais, le rôle Administrateur et le rail des modules déployé.",
+    "reset": "Réinitialiser la démonstration",
+    "confirmTitle": "Réinitialiser la démonstration?",
+    "confirmBody": "Toutes les modifications faites dans ce navigateur sont abandonnées et les enregistrements d’origine sont régénérés pour aujourd’hui. La langue revient à l’anglais et le rôle à Administrateur.",
+    "confirmAction": "Réinitialiser la démonstration",
+    "done": "Démonstration réinitialisée",
+    "dataNote": "Les enregistrements résident uniquement dans ce navigateur. La réinitialisation n’affecte personne d’autre."
+  },
+  "workOrderStatus": {
+    "open": "Ouvert",
+    "assigned": "Assigné",
+    "inProgress": "En cours",
+    "waitingForParts": "En attente de pièces",
+    "completed": "Terminé",
+    "cancelled": "Annulé",
+    "refused": "Un bon de travail ne peut pas passer du statut {from} au statut {to}.",
+    "reasonRequired": "L’annulation d’un bon de travail exige un motif.",
+    "refusedByRule": "Un administrateur a désactivé ce changement dans les paramètres."
+  },
+  "priority": {
+    "critical": "Critique",
+    "high": "Élevée",
+    "medium": "Moyenne",
+    "low": "Faible"
+  },
+  "workOrderType": {
+    "preventive": "Préventif",
+    "corrective": "Correctif",
+    "emergency": "Urgence",
+    "inspection": "Inspection",
+    "calibration": "Étalonnage",
+    "safety": "Sécurité"
+  },
+  "workOrderQueue": {
+    "caption": "Bons de travail, les demandes les plus récentes en premier.",
+    "searchLabel": "Rechercher des bons de travail",
+    "searchPlaceholder": "Numéro, titre ou étiquette d’actif",
+    "columns": {
+      "number": "Numéro",
+      "title": "Titre",
+      "status": "Statut",
+      "priority": "Priorité",
+      "due": "Échéance",
+      "assignee": "Assigné à",
+      "facility": "Site",
+      "type": "Type"
+    },
+    "daysLate": "{days, plural, one {# jour de retard} other {# jours de retard}}",
+    "noDueDate": "Aucune échéance",
+    "unassigned": "Non assigné",
+    "allSites": "Tous les sites",
+    "clearAll": "Effacer les filtres",
+    "showing": "{shown} sur {total}",
+    "due": {
+      "any": "Toute échéance",
+      "overdue": "En retard",
+      "today": "Échéance aujourd’hui",
+      "week": "Échéance dans 7 jours",
+      "month": "Échéance dans 30 jours",
+      "none": "Aucune échéance"
+    },
+    "assignee": {
+      "anyone": "N’importe qui",
+      "unassigned": "Non assigné",
+      "crew": "Une équipe, pas une personne"
+    },
+    "facets": {
+      "clearOne": "Effacer {facet}",
+      "filterBy": "Filtrer par {facet}"
+    }
+  },
+  "assetStatus": {
+    "active": "Actif",
+    "inactive": "Inactif",
+    "decommissioned": "Déclassé"
+  },
+  "criticality": {
+    "critical": "Critique",
+    "high": "Élevée",
+    "medium": "Moyenne",
+    "low": "Faible"
+  },
+  "scheduleFrequency": {
+    "weekly": "Chaque semaine",
+    "monthly": "Chaque mois",
+    "quarterly": "Chaque trimestre",
+    "semiAnnual": "Deux fois par année",
+    "annual": "Chaque année"
+  },
+  "partCategory": {
+    "filters": "Filtres",
+    "beltsAndSeals": "Courroies et joints",
+    "lamps": "Lampes",
+    "sensors": "Sondes",
+    "valves": "Vannes",
+    "pumps": "Pompes",
+    "electrical": "Électricité",
+    "water": "Eau",
+    "lifeSafety": "Sécurité des personnes",
+    "consumables": "Consommables"
+  },
+  "unitOfMeasure": {
+    "each": "{count, plural, one {unité} other {unités}}",
+    "box": "{count, plural, one {boîte} other {boîtes}}",
+    "litre": "{count, plural, one {L} other {L}}",
+    "metre": "{count, plural, one {m} other {m}}",
+    "kit": "{count, plural, one {trousse} other {trousses}}"
+  },
+  "inventoryTransactionKind": {
+    "issue": "Sortie",
+    "receipt": "Réception",
+    "adjustment": "Ajustement",
+    "return": "Retour"
+  },
+  "inspectionStatus": {
+    "scheduled": "Prévue",
+    "inProgress": "En cours",
+    "passed": "Réussie",
+    "failed": "Échouée"
+  },
+  "assetDetail": {
+    "metaTitle": "{tag}",
+    "backToAssets": "Retour aux actifs",
+    "locationUnknown": "Emplacement non consigné",
+    "edit": {
+      "action": "Modifier l’actif",
+      "title": "Modifier l’actif",
+      "description": "Modifiez ce que le système consigne au sujet de l’équipement {tag}. L’étiquette, le type et l’emplacement sont fixes.",
+      "status": "État",
+      "criticality": "Criticité",
+      "manufacturer": "Fabricant",
+      "model": "Modèle",
+      "serialNumber": "Numéro de série",
+      "save": "Enregistrer",
+      "saved": "Actif mis à jour",
+      "nothingChanged": "Aucune modification"
+    },
+    "sections": "Sections de l’actif",
+    "unreadable": "Illisible",
+    "notRecorded": "Non consigné",
+    "tabs": {
+      "overview": "Aperçu",
+      "history": "Historique",
+      "workOrders": "Bons de travail",
+      "maintenance": "Entretien",
+      "inspections": "Inspections",
+      "documents": "Documents",
+      "parts": "Pièces",
+      "label": "Étiquette"
+    },
+    "overview": {
+      "identity": "Identification",
+      "tag": "Étiquette d’actif",
+      "name": "Nom",
+      "type": "Type",
+      "manufacturer": "Fabricant",
+      "model": "Modèle",
+      "serialNumber": "Numéro de série",
+      "installedOn": "Installé",
+      "place": "Emplacement",
+      "facility": "Site",
+      "kind": {
+        "building": "Bâtiment",
+        "floor": "Étage",
+        "room": "Local"
+      }
+    },
+    "history": {
+      "title": "Historique",
+      "description": "Tout ce qui est arrivé à cet actif, du plus récent au plus ancien.",
+      "emptyTitle": "Rien de consigné",
+      "emptyBody": "Les travaux, inspections, pièces et modifications apparaissent ici au fur et à mesure.",
+      "unreadableChange": "Une modification a été consignée",
+      "unreadableChecklist": "Liste de vérification illisible",
+      "unreadablePart": "une pièce illisible",
+      "movement": "Sur {order} : {part} (quantité {quantity})",
+      "kind": {
+        "workOrder": "Bon de travail",
+        "inspection": "Inspection",
+        "movement": "Pièces",
+        "audit": "Modification"
+      }
+    },
+    "workOrders": {
+      "title": "Bons de travail",
+      "description": "Les travaux demandés pour cet actif, les ouverts d’abord.",
+      "emptyTitle": "Aucun travail demandé",
+      "emptyBody": "Les bons de travail de cet actif apparaissent ici.",
+      "dueOn": "Échéance {date}",
+      "overdueOn": "Était dû le {date}",
+      "noDueDate": "Aucune date d’échéance"
+    },
+    "maintenance": {
+      "title": "Entretien",
+      "description": "Les plans auxquels cet actif est rattaché, et la prochaine échéance de chacun.",
+      "emptyTitle": "Aucun plan d’entretien",
+      "emptyBody": "Cet actif n’a aucun entretien préventif planifié.",
+      "unreadablePlan": "Plan illisible",
+      "overdueBy": "{days, plural, one {# jour de retard} other {# jours de retard}}",
+      "dueToday": "Prévu aujourd’hui",
+      "dueIn": "{date} — dans {days, plural, one {# jour} other {# jours}}",
+      "lastDone": "Dernier entretien {date}",
+      "neverDone": "Jamais effectué",
+      "frequency": {
+        "weekly": "Hebdomadaire",
+        "monthly": "Mensuel",
+        "quarterly": "Trimestriel",
+        "semiAnnual": "Deux fois par année",
+        "annual": "Annuel"
+      }
+    },
+    "inspections": {
+      "title": "Inspections",
+      "description": "Ce qui a été inspecté sur cet actif.",
+      "emptyTitle": "Aucune inspection",
+      "emptyBody": "Les inspections de cet actif apparaissent ici.",
+      "unreadableChecklist": "Liste de vérification illisible",
+      "performedOn": "Effectuée le {date}",
+      "scheduledFor": "Prévue le {date}"
+    },
+    "documents": {
+      "title": "Documents",
+      "description": "Les documents rattachés à cet actif. La phase 1 consigne le document, pas le fichier.",
+      "emptyTitle": "Aucun document",
+      "emptyBody": "Les manuels, certificats et rapports rattachés à cet actif apparaissent ici.",
+      "size": "{kilobytes} ko",
+      "version": "Version {version}",
+      "uploadedOn": "Versé le {date}"
+    },
+    "parts": {
+      "title": "Pièces",
+      "description": "Les pièces de rechange installées sur cet actif.",
+      "emptyTitle": "Aucune pièce consignée",
+      "emptyBody": "Les pièces utilisées sur les bons de travail de cet actif apparaissent ici.",
+      "low": "Faible",
+      "ok": "En stock",
+      "stock": "{onHand} en main, minimum {minimum}"
+    },
+    "pageDescription": "Tout ce que le système consigne au sujet d’un équipement."
+  },
+  "documentKind": {
+    "manual": "Manuel",
+    "certificate": "Certificat",
+    "drawing": "Plan",
+    "procedure": "Procédure",
+    "contract": "Contrat",
+    "report": "Rapport",
+    "photo": "Photo"
+  },
+  "documentType": {
+    "pdf": "PDF",
+    "word": "Word",
+    "excel": "Excel",
+    "other": "Autre"
+  },
+  "filedAgainst": {
+    "asset": "Actif {label}",
+    "workOrder": "Bon de travail {label}",
+    "maintenancePlan": "Programme {label}",
+    "facility": "Site {label}",
+    "organisation": "Organisation",
+    "unresolved": "Un enregistrement absent du système ({label})",
+    "organisationHint": "Classé au nom de l’organisation plutôt que d’un enregistrement"
+  },
+  "documentsTable": {
+    "searchLabel": "Rechercher des documents",
+    "searchPlaceholder": "Titre, nom de fichier ou enregistrement",
+    "caption": "Tous les documents, du plus récent au plus ancien",
+    "columns": {
+      "title": "Titre",
+      "kind": "Type de document",
+      "filedAgainst": "Classé sous",
+      "type": "Format",
+      "size": "Taille",
+      "version": "Version",
+      "uploaded": "Téléversé"
+    },
+    "size": "{kilobytes} Ko",
+    "version": "v{version}",
+    "noBytes": "Métadonnées seulement : cette démonstration enregistre le fichier, pas son contenu.",
+    "rowActions": "Actions pour {title}"
+  },
+  "facilities": {
+    "caption": "Sites, bâtiments, étages et locaux",
+    "equipment": "{count, plural, =0 {Aucun équipement} one {# équipement} other {# équipements}}",
+    "openWork": "{count, plural, =0 {Aucun travail en cours} one {# bon de travail en cours} other {# bons de travail en cours}}",
+    "roomEmptyTitle": "Rien de consigné dans ce local",
+    "roomEmptyBody": "L’équipement est classé sous le local où il se trouve; un local sans équipement est un local où rien n’a encore été consigné.",
+    "openInRegister": "Ouvrir {tag} dans le registre des actifs",
+    "kind": {
+      "site": "Site",
+      "building": "Bâtiment",
+      "floor": "Étage",
+      "room": "Local"
+    },
+    "viewLabel": "Comment consulter les lieux",
+    "viewList": "Liste",
+    "viewMap": "Plan"
+  },
+  "floorMap": {
+    "metaTitle": "Plan d’étage {floor}",
+    "pageDescription": "Où se trouve l’équipement de cet étage et ce qui reste ouvert à son sujet.",
+    "planAlt": "Plan de l’étage {floor}, avec un repère sur chaque équipement",
+    "caption": "Équipement de cet étage",
+    "marker": "{tag}, {state}",
+    "markerUnreadable": "Inconnu",
+    "overdue": "Travaux en retard",
+    "open": "Travaux en cours",
+    "clear": "Rien en cours",
+    "unreadable": "Illisible",
+    "noDrawingTitle": "Aucun plan au dossier pour cet étage",
+    "noDrawingBody": "L’étage a été relevé et aucun plan n’a été versé au dossier. Tout ce qui s’y trouve est énuméré ci-dessous.",
+    "unrecordedTitle": "Personne n’a cherché de plan pour cet étage",
+    "unrecordedBody": "L’existence d’un plan pour cet étage n’a jamais été consignée, ce qui n’équivaut pas à l’absence de plan. Tout ce qui s’y trouve est énuméré ci-dessous.",
+    "notAFloorTitle": "{code} n’est pas un étage",
+    "notAFloorBody": "Ce système contient bien {code}, mais il s’agit d’un {kind} et non d’un étage. Les plans sont classés sous les étages; il n’y a donc pas de plan à afficher.",
+    "roomsTitle": "Locaux de cet étage",
+    "roomEmpty": "Rien de consigné dans ce local",
+    "onThePlan": "Sur le plan",
+    "notOnThePlan": "Absent du plan",
+    "showOnPlan": "Afficher {tag} sur le plan",
+    "openInRegister": "Ouvrir {tag} dans le registre des actifs",
+    "selectedTitle": "Équipement sélectionné",
+    "nothingSelectedTitle": "Aucune sélection",
+    "nothingSelectedBody": "Choisissez un équipement sur le plan, ou dans les locaux à côté, pour voir ce qui reste ouvert à son sujet.",
+    "openCount": "{count, plural, =0 {Aucun travail en cours} one {# bon de travail en cours} other {# bons de travail en cours}}",
+    "overdueCount": "{count, plural, =0 {Rien en retard} one {# en retard} other {# en retard}}",
+    "unreadableMarkerTitle": "Ce repère désigne un équipement que les enregistrements ne contiennent plus",
+    "unreadableMarkerBody": "La position est au dossier, l’équipement qu’elle désigne ne l’est pas. Ce n’est pas un espace vide sur le plancher : c’est un repère que personne ne peut lire, et il est présenté comme tel plutôt que comme un étage où il n’y a rien.",
+    "unplacedTitle": "À cet étage, absent du plan",
+    "unplacedBody": "Aucune position n’a été consignée pour ces équipements; le plan ne peut donc pas montrer où ils se trouvent. Ils sont énumérés ici, car un équipement que le plan ne peut pas dessiner reste un équipement présent à l’étage.",
+    "missingBody": "Rien dans WorkAxis n’est classé sous {identifier}. Les étages sont désignés par leur code, tel qu’il figure sur le plan : MCT-B01-F1.",
+    "backToFacilities": "Retour aux lieux",
+    "openFloorPlan": "Plan d’étage",
+    "registerLink": "Registre",
+    "openFloorPlanFor": "Plan de l’étage {code}",
+    "raiseAction": "Créer un bon de travail",
+    "raiseDialogTitle": "Créer un bon de travail pour {tag}",
+    "raiseDialogDescription": "L’équipement est déjà sélectionné. Le bon apparaît sur ce plan dès qu’il est enregistré.",
+    "lowStock": "Pièce bientôt épuisée",
+    "openOrdersTitle": "Travaux en cours sur cet équipement",
+    "openOrderLink": "Ouvrir {number}",
+    "lowPartsCount": "{count, plural, =0 {Aucune pièce sous son minimum} one {# pièce sous son minimum} other {# pièces sous leur minimum}}",
+    "floorLabel": "Étage",
+    "onPhoneTitle": "Le plan s’affiche à partir de la largeur d’une tablette",
+    "onPhoneBody": "Sur un téléphone, le plan est plus petit que les équipements qui y sont dessinés. Les locaux ci-dessous contiennent tout ce que le plan montre, et chaque équipement s’ouvre à partir de là.",
+    "noPlansTitle": "Aucun étage n’a encore de plan au dossier",
+    "noPlansBody": "Un étage apparaît ici dès qu’un plan lui est associé. Les lieux ci-dessous représentent l’ensemble du parc dans tous les cas."
+  },
+  "reports": {
+    "choose": "Rapport",
+    "name": {
+      "aging": "Ancienneté des bons de travail",
+      "completion": "Achèvement par site",
+      "inventory": "État des stocks",
+      "inspections": "Taux de réussite des inspections"
+    },
+    "about": {
+      "aging": "Depuis combien de temps le travail est ouvert. Des tranches plutôt qu’une moyenne, car le bon ouvert depuis mars est celui sur lequel on agit.",
+      "completion": "Ce que chaque site a ouvert et ce qu’il a terminé.",
+      "inventory": "Ce qui est en magasin et ce qui est sous son minimum.",
+      "inspections": "Combien d’inspections ont réussi. Le travail non encore fait reste hors du taux plutôt que de compter comme un échec."
+    },
+    "columns": {
+      "bucket": "Ouvert depuis",
+      "orders": "Bons de travail",
+      "oldest": "Le plus ancien (jours)",
+      "site": "Site",
+      "raised": "Ouverts",
+      "completed": "Terminés",
+      "rate": "Taux",
+      "stockNumber": "Numéro de pièce",
+      "category": "Catégorie",
+      "onHand": "En main",
+      "minimum": "Minimum",
+      "state": "État",
+      "passed": "Réussies",
+      "failed": "Échouées",
+      "pending": "Pas encore faites"
+    },
+    "bucket": {
+      "week": "Une semaine ou moins",
+      "month": "8 à 30 jours",
+      "quarter": "31 à 90 jours",
+      "older": "Plus de 90 jours"
+    },
+    "state": {
+      "low": "Sous le minimum",
+      "ok": "En stock"
+    },
+    "percent": "{value} %",
+    "export": "Exporter ces lignes",
+    "exported": "{rows, plural, one {# ligne exportée} other {# lignes exportées}}, et le journal le consigne.",
+    "rowsShown": "{rows, plural, =0 {Aucune ligne} one {# ligne} other {# lignes}} dans ce rapport",
+    "emptyTitle": "Rien à signaler ici",
+    "emptyBody": "Ce rapport n’a aucune ligne pour le site choisi. Élargissez le filtre à tous les sites pour voir le reste."
+  },
+  "documentUpload": {
+    "action": "Joindre un document",
+    "kindLabel": "Type de document",
+    "recorded": "{fileName} enregistré. Le fichier lui-même n’est pas conservé dans cette démonstration.",
+    "refused": "{fileName} n’a pas été joint : le système accepte les fichiers PDF, Word et Excel.",
+    "title": "Pièces jointes",
+    "description": "Documents classés sous ce bon de travail. Métadonnées seulement — le fichier lui-même n’est pas conservé.",
+    "emptyTitle": "Aucune pièce jointe",
+    "emptyBody": "Les photographies, rapports et procédures classés ici restent avec le bon de travail."
+  },
+  "cancellationReason": {
+    "duplicate": "Doublon d’un autre bon",
+    "noLongerRequired": "N’est plus requis",
+    "assetDecommissioned": "Actif déclassé",
+    "handledUnderAnotherOrder": "Traité dans un autre bon",
+    "notRecordedInSource": "Aucun motif consigné dans le système source"
+  },
+  "validation": {
+    "required": "Obligatoire",
+    "tooLong": "Trop long",
+    "tooLarge": "Trop grand",
+    "date": "Utilisez une date au format AAAA-MM-JJ",
+    "positive": "Doit être supérieur à zéro",
+    "wholeNumber": "Doit être un nombre entier",
+    "assetRequired": "Choisissez l’équipement visé par ces travaux",
+    "locationRequired": "Choisissez l’emplacement de cet équipement",
+    "reasonRequired": "Choisissez un motif",
+    "assetTagShape": "Utilisez le format ABC-SITE-01",
+    "moreThanOnHand": "Plus que la quantité en stock"
+  },
+  "notifications": {
+    "workOrderOverdue": "{number} a dépassé sa date d’échéance",
+    "partBelowMinimum": "{partNumber} est sous son minimum, {onHand} en stock",
+    "inspectionFailed": "Une inspection a échoué et exige des travaux correctifs",
+    "workOrderAssigned": "{number} vous a été assigné",
+    "maintenanceDue": "L’entretien préventif de l’équipement {asset} est dû, et {number} a été créé",
+    "workOrderDueSoon": "{number} est à faire pour le {dueAt}",
+    "inspectionDue": "{assetTag} doit être inspecté le {scheduledFor}",
+    "syncConflict": "{label} n’a pas pu être envoyé : l’enregistrement a changé pendant votre absence",
+    "workOrderDueSoonSubject": "À faire bientôt : {number}",
+    "workOrderOverdueSubject": "En retard : {number}",
+    "workOrderAssignedSubject": "Qui vous est assigné : {number}",
+    "partBelowMinimumSubject": "Stock bas : {partNumber}",
+    "inspectionDueSubject": "Inspection à faire : {assetTag}",
+    "syncConflictSubject": "Non envoyé : {label}",
+    "kind": {
+      "workOrderDueSoon": "À faire bientôt",
+      "workOrderOverdue": "En retard",
+      "workOrderAssigned": "Qui vous est assigné",
+      "partBelowMinimum": "Stock bas",
+      "inspectionDue": "Inspections à faire",
+      "inspectionFailed": "Inspections échouées",
+      "maintenanceDue": "Entretien préventif",
+      "syncConflict": "Modifications non envoyées"
+    }
+  },
+  "audit": {
+    "workOrderCreated": "Bon de travail {number} créé",
+    "statusChanged": "{number} est passé à {status}",
+    "workOrderAssigned": "{number} assigné à {user}",
+    "workOrderReassigned": "{number} réassigné à {to} (auparavant {from})",
+    "workOrderReassignedFromCrew": "{number} réassigné de l’équipe {crew} à {to}",
+    "workOrderReassignedFromUnreadable": "{number} réassigné à {to}; le détenteur précédent n’a pas pu être lu",
+    "assetUpdated": "Actif {tag} mis à jour",
+    "partIssued": "Sortie de stock de la pièce {partNumber} : {quantity}",
+    "notificationRead": "Notification marquée comme lue",
+    "demoReset": "Données de démonstration réinitialisées",
+    "partAdjusted": "Compté {partNumber} : de {from} à {to}",
+    "importCommitted": "Importation de {records} fiches depuis {fileName}",
+    "importRolledBack": "Importation du fichier {fileName} annulée : {records} fiches retirées",
+    "dataRebuilt": "Données de démonstration reconstruites pour la version {version}; les fiches de la version {previousVersion} ont été supprimées.",
+    "dataRefreshed": "Données de démonstration actualisées pour le {day}; les fiches du {previousDay} ont été supprimées.",
+    "conflictKeptMine": "Version de cet appareil conservée pour {record}",
+    "conflictKeptTheirs": "Version du serveur conservée pour {record}",
+    "workOrderCompleted": "{number} terminé, {minutes} min consignées",
+    "workOrderCancelled": "{number} annulé : {reason}",
+    "taskTicked": "Une tâche de {number} a été cochée",
+    "taskUnticked": "Une tâche de {number} a été décochée",
+    "labourLogged": "{minutes} min consignées sur {number}",
+    "documentUploaded": "{fileName} téléversé, version {version}",
+    "reportExported": "Rapport {report} exporté, {rows} lignes",
+    "notificationsAllRead": "A marqué {count} notifications comme lues",
+    "notificationsRaised": "A produit {count} notifications",
+    "notificationChannelOn": "A activé les notifications {channel} pour {kind}",
+    "notificationChannelOff": "A désactivé les notifications {channel} pour {kind}",
+    "workflowMoveEnabled": "A autorisé le passage des bons de travail du statut {fromStatus} au statut {toStatus}",
+    "workflowMoveDisabled": "A empêché le passage des bons de travail du statut {fromStatus} au statut {toStatus}",
+    "waitingForPartsEnabled": "A activé l’étape En attente de pièces",
+    "waitingForPartsDisabled": "A désactivé l’étape En attente de pièces",
+    "completionNoteRequired": "A rendu la note obligatoire à la fin d’un travail",
+    "completionNoteOptional": "A rendu la note facultative à la fin d’un travail",
+    "prioritySlaChanged": "A fixé la cible {slaPriority} à {hours} heures",
+    "notificationDefaultOn": "A activé les notifications {channel} pour {kind}, pour les nouvelles personnes",
+    "notificationDefaultOff": "A désactivé les notifications {channel} pour {kind}, pour les nouvelles personnes",
+    "userRoleChanged": "A fait passer {user} du rôle {fromRole} au rôle {toRole}",
+    "userSiteChanged": "A transféré {user} du site {fromSite} au site {toSite}",
+    "userDeactivated": "A désactivé {user}",
+    "userReactivated": "A réactivé {user}"
+  },
+  "records": {
+    "missingTitle": "Aucune fiche ne porte cet identifiant",
+    "missingBody": "Rien dans WorkAxis ne correspond à {identifier}. Vérifiez l’étiquette ou numérisez-la de nouveau."
+  },
+  "label": {
+    "title": "Étiquette",
+    "description": "Une étiquette imprimable, avec code QR et code-barres, pour cette fiche.",
+    "metaTitle": "Étiquette {identifier}",
+    "print": "Imprimer l’étiquette",
+    "printHint": "N’imprime que l’étiquette, sans le reste de l’écran.",
+    "qrAlt": "Code QR qui ouvre {identifier}",
+    "barcodeAlt": "Code-barres Code 128 pour {identifier}",
+    "roomLine": "Salle : {code}",
+    "binLine": "Casier : {code}",
+    "scanHint": "Numérisez pour ouvrir cette fiche dans WorkAxis"
+  },
+  "scan": {
+    "title": "Numériser",
+    "description": "Pointez la caméra vers une étiquette ou téléversez-en une photo.",
+    "cameraTitle": "Caméra",
+    "startCamera": "Démarrer la caméra",
+    "stopCamera": "Arrêter la caméra",
+    "starting": "Démarrage de la caméra…",
+    "deniedTitle": "La caméra est bloquée",
+    "deniedBody": "Ce navigateur n’autorise pas WorkAxis à utiliser la caméra. Autorisez-la depuis la barre d’adresse ou téléversez plutôt une photo de l’étiquette.",
+    "noCameraTitle": "Aucune caméra sur cet appareil",
+    "noCameraBody": "Téléversez plutôt une photo de l’étiquette.",
+    "cameraFailedTitle": "La caméra n’a pas démarré",
+    "cameraFailedBody": "Réessayez ou téléversez plutôt une photo de l’étiquette.",
+    "uploadTitle": "Téléverser une photo",
+    "uploadBody": "Fonctionne sans caméra et sur un ordinateur de bureau.",
+    "uploadAction": "Choisir une photo",
+    "foundAsset": "Actif trouvé",
+    "foundPart": "Pièce trouvée",
+    "open": "Ouvrir",
+    "unknownToast": "{code} n’est pas une étiquette WorkAxis."
+  },
+  "verify": {
+    "title": "Vérification de l’inventaire",
+    "description": "Numérisez les pièces d’une tablette et inscrivez ce que vous avez compté.",
+    "start": "Vérifier l’inventaire",
+    "readOnlyTitle": "Vous ne pouvez pas inscrire de comptes",
+    "readOnlyBody": "Votre rôle permet d’ouvrir cet écran, mais pas de modifier les niveaux de stock.",
+    "sheetTitle": "Feuille de comptage",
+    "sheetEmpty": "Numérisez l’étiquette d’une pièce pour l’ajouter à la feuille.",
+    "binLine": "Casier : {code}",
+    "expected": "Au registre : {quantity}",
+    "countedLabel": "Compté",
+    "record": "Inscrire le compte",
+    "remove": "Retirer",
+    "rowAdjusted": "Stock ajusté, et le mouvement a été inscrit aux registres.",
+    "rowConfirmed": "Le compte correspond aux registres. Rien n’a été modifié.",
+    "adjusted": "{partNumber} ajusté.",
+    "confirmed": "{partNumber} confirmé.",
+    "countInvalid": "Un compte est un nombre entier, zéro ou plus.",
+    "countRefused": "Ce compte n’a pas pu être inscrit.",
+    "assetsDoNotCount": "Il s’agit d’une étiquette d’actif. Numérisez une pièce pour la compter."
+  },
+  "dataTable": {
+    "columns": "Colonnes",
+    "clearFilters": "Effacer les filtres",
+    "noFilterValues": "Rien à filtrer",
+    "rowsTotal": "{total, plural, =0 {Aucune ligne} one {# ligne} other {# lignes}}",
+    "rowsFiltered": "Affichage de {shown} sur {total}",
+    "pagination": "Pages",
+    "pageOf": "Page {page} sur {pages}",
+    "previousPage": "Précédent",
+    "nextPage": "Suivant",
+    "sortBy": "Trier selon cette colonne"
+  },
+  "assetsTable": {
+    "caption": "Les équipements, avec leur site, leur état et leur criticité",
+    "searchLabel": "Rechercher dans le registre des équipements",
+    "searchPlaceholder": "Étiquette, nom ou salle",
+    "rowActions": "Actions pour {tag}",
+    "columns": {
+      "assetTag": "Étiquette",
+      "name": "Équipement",
+      "type": "Type",
+      "facility": "Site",
+      "location": "Salle",
+      "status": "État",
+      "criticality": "Criticité",
+      "installedOn": "Installé",
+      "actions": "Actions"
+    },
+    "actions": {
+      "newWorkOrder": "Nouveau bon de travail",
+      "copyTag": "Copier l’étiquette",
+      "copied": "{tag} copiée"
+    }
+  },
+  "partsTable": {
+    "caption": "Les pièces de rechange, avec les quantités en main et leur emplacement",
+    "searchLabel": "Rechercher dans le registre des pièces",
+    "searchPlaceholder": "Numéro, nom ou casier",
+    "rowActions": "Actions pour {number}",
+    "low": "Faible",
+    "ok": "En stock",
+    "binUnreadable": "Illisible",
+    "cardStock": "{onHand} {unit} en main, minimum {minimum}",
+    "columns": {
+      "partNumber": "Numéro",
+      "name": "Pièce",
+      "stockState": "Stock",
+      "onHand": "En main",
+      "minimum": "Minimum",
+      "category": "Catégorie",
+      "bin": "Casier",
+      "unitCost": "Coût unitaire",
+      "actions": "Actions"
+    },
+    "actions": {
+      "printLabel": "Imprimer l’étiquette",
+      "copyNumber": "Copier le numéro",
+      "copied": "{number} copié"
+    }
+  },
+  "partDetail": {
+    "metaTitle": "{number} · Pièce",
+    "pageDescription": "Les quantités en main, l’emplacement et tous les mouvements consignés.",
+    "missingBody": "Aucune pièce de ce système ne porte le numéro {number}.",
+    "backToRegister": "Retour au registre des pièces",
+    "detailsTitle": "Détails",
+    "category": "Catégorie",
+    "site": "Site",
+    "bin": "Casier",
+    "onHand": "En main",
+    "minimum": "Minimum",
+    "unitCost": "Coût unitaire",
+    "unreadable": "Illisible",
+    "quantityWithUnit": "{quantity} {unit}",
+    "onHandSummary": "{onHand} {unit} en main, minimum {minimum}",
+    "ledger": {
+      "title": "Mouvements",
+      "none": "Aucun mouvement consigné pour cette pièce.",
+      "out": "{quantity} en sortie",
+      "in": "{quantity} en entrée",
+      "by": "par {name}",
+      "actorUnknown": "par une personne qui ne figure plus dans les registres",
+      "noOrder": "sans bon de travail",
+      "orderUnreadable": "bon de travail illisible"
+    }
+  },
+  "maintenanceTable": {
+    "caption": "Les visites planifiées, les plus proches d’abord, avec ce qui est en retard et ce qui peut être créé",
+    "searchLabel": "Rechercher dans les visites planifiées",
+    "searchPlaceholder": "Étiquette, équipement ou programme",
+    "rowActions": "Actions pour {asset}",
+    "neverDone": "Jamais",
+    "columns": {
+      "asset": "Étiquette",
+      "assetName": "Équipement",
+      "plan": "Programme",
+      "due": "Échéance",
+      "nextDue": "Prochaine",
+      "site": "Site",
+      "frequency": "Fréquence",
+      "lastDone": "Dernière",
+      "actions": "Actions"
+    },
+    "due": {
+      "late": "{days, plural, one {# jour de retard} other {# jours de retard}}",
+      "today": "Aujourd’hui",
+      "inDays": "{days, plural, one {Dans # jour} other {Dans # jours}}"
+    },
+    "dueKind": {
+      "late": "En retard",
+      "today": "Aujourd’hui",
+      "soon": "Peut être créé",
+      "ahead": "Pas encore"
+    },
+    "actions": {
+      "generate": "Créer un bon de travail",
+      "generated": "{number} créé pour {asset}",
+      "runDue": "Créer les {count} dues",
+      "sweptCount": "{count} bons de travail créés",
+      "refused": "{schedule} n’a pas pu être créé"
+    },
+    "unreadable": "{count, plural, one {Une visite planifiée n’a pas pu être lue : son programme ou son équipement est absent des registres.} other {# visites planifiées n’ont pas pu être lues : leur programme ou leur équipement est absent des registres.}}"
+  },
+  "maintenanceViews": {
+    "visits": "Visites planifiées",
+    "month": "Mois",
+    "plans": "Programmes",
+    "label": "Quelle vue"
+  },
+  "maintenanceMonth": {
+    "previous": "Mois précédent",
+    "next": "Mois suivant",
+    "thisMonth": "Ce mois-ci",
+    "weekOf": "Semaine du {date}",
+    "nothing": "Rien n’est prévu en {month}."
+  },
+  "plansTable": {
+    "caption": "Les programmes d’entretien, ce qu’ils couvrent et à quelle fréquence",
+    "searchLabel": "Rechercher dans les programmes d’entretien",
+    "searchPlaceholder": "Code ou nom du programme",
+    "active": "Actif",
+    "inactive": "Hors service",
+    "noEquipment": "Aucun équipement",
+    "onPlan": "{count} sur ce programme",
+    "days": "{days, plural, one {# jour} other {# jours}}",
+    "minutes": "{minutes} min",
+    "columns": {
+      "code": "Code",
+      "name": "Programme",
+      "state": "État",
+      "equipment": "Type d’équipement",
+      "frequency": "Fréquence",
+      "onPlan": "Équipement",
+      "leadTime": "Créé avant",
+      "estimate": "Estimation"
+    }
+  },
+  "workOrderForm": {
+    "title": "Ouvrir un bon de travail",
+    "body": "Ouvert pour un équipement, avec un titre et une description dans la langue que vous utilisez.",
+    "submit": "Ouvrir le bon de travail",
+    "created": "{number} ouvert",
+    "fields": {
+      "asset": "Équipement",
+      "chooseAsset": "Choisissez l’équipement",
+      "assetNotFound": "Aucun équipement portant l’étiquette {tag}. Choisissez-le dans la liste.",
+      "assignee": "Assigner à",
+      "unassigned": "Personne pour l’instant",
+      "type": "Type",
+      "priority": "Priorité",
+      "dueOn": "Date d’échéance",
+      "estimatedMinutes": "Minutes estimées",
+      "title": "Titre",
+      "description": "Description",
+      "contentLanguageHint": "Écrivez dans la langue que vous utilisez. Le texte est consigné tel quel et n’est pas traduit.",
+      "notAssignableHint": "Non affichés : {roles}. Ce rôle ne peut rien modifier; on ne lui attribue donc pas de travail."
+    }
+  },
+  "workOrderDetail": {
+    "metaTitle": "Bon de travail {number}",
+    "pageDescription": "Un bon de travail et tout ce qui y est consigné.",
+    "backToQueue": "Retour aux bons de travail",
+    "asEntered": "{language, select, en {Rédigé en anglais} fr {Rédigé en français} other {Tel que rédigé}}",
+    "raisedOn": "Demandé le {date}",
+    "equipment": "Équipement",
+    "site": "Site",
+    "place": "Emplacement",
+    "notRecorded": "Non consigné",
+    "unreadable": "Cette fiche n’a pas pu être lue",
+    "due": {
+      "label": "Échéance",
+      "none": "Aucune échéance",
+      "today": "À faire aujourd’hui",
+      "ahead": "Dans {days, plural, one {# jour} other {# jours}}",
+      "late": "{days, plural, one {# jour de retard} other {# jours de retard}}",
+      "passed": "Était à faire le {date}"
+    },
+    "assignee": {
+      "label": "Assigné à",
+      "nobody": "Personne pour l’instant",
+      "crew": "Équipe <mono>{code}</mono>",
+      "crewPerson": "Équipe <mono>{code}</mono> — {name}",
+      "contractor": "Équipe <mono>{code}</mono> — un entrepreneur externe",
+      "crewUnknown": "Équipe <mono>{code}</mono> — une équipe que cette organisation n’utilise pas"
+    },
+    "description": {
+      "title": "Description",
+      "none": "Rien n’a été écrit."
+    },
+    "tasks": {
+      "title": "Tâches",
+      "none": "Aucune tâche n’était inscrite sur ce bon.",
+      "progress": "{done} sur {total} effectuées",
+      "done": "Effectuée",
+      "notDone": "Non effectuée",
+      "completedBy": "{name}, le {date}"
+    },
+    "parts": {
+      "title": "Pièces utilisées",
+      "none": "Aucune pièce n’a été sortie pour ce bon.",
+      "quantity": "{quantity, plural, one {# unité} other {# unités}}",
+      "returned": "{quantity, plural, one {# unité retournée} other {# unités retournées}}",
+      "partUnreadable": "Une fiche de pièce qui n’existe plus"
+    },
+    "labour": {
+      "title": "Temps consigné",
+      "none": "Personne n’a consigné de temps sur ce bon.",
+      "total": "{minutes} min"
+    },
+    "history": {
+      "title": "Historique des statuts",
+      "raised": "Créé au statut {to}",
+      "moved": "{from} vers {to}",
+      "by": "par {name}",
+      "actorUnknown": "par une personne qui ne figure plus dans les fiches",
+      "none": "Rien n’a encore été consigné."
+    },
+    "comments": {
+      "title": "Commentaires",
+      "none": "Personne n’a écrit sur ce bon.",
+      "authorUnknown": "Une personne qui ne figure plus dans les fiches"
+    },
+    "detailsTitle": "Détails",
+    "missingBody": "Aucun bon de travail ne correspond à {number}. Vérifiez le numéro ou ouvrez-le depuis la liste des bons de travail.",
+    "write": {
+      "actions": {
+        "start": "Commencer",
+        "pause": "En attente de pièces",
+        "resume": "Reprendre",
+        "complete": "Terminer",
+        "cancel": "Annuler le bon",
+        "assign": "Assigner",
+        "logTime": "Consigner du temps"
+      },
+      "consequence": {
+        "start": "Consigné comme commencé maintenant, à votre nom.",
+        "pause": "Le bon reste ouvert et cesse de compter comme travail en cours.",
+        "resume": "Retour en cours, depuis l’attente de pièces."
+      },
+      "complete": {
+        "title": "Terminer {number}",
+        "description": "Ceci ferme le bon et consigne le temps à votre nom. Un bon terminé ne peut pas être rouvert.",
+        "minutes": "Combien de temps cela a-t-il pris?",
+        "minutesHint": "En minutes. Consigné comme du temps que vous avez travaillé, non comme un total sur le bon.",
+        "note": "Que doit savoir la prochaine personne?",
+        "noteHint": "Rédigé dans la langue dans laquelle vous travaillez. C’est consigné tel que vous l’avez écrit et ce n’est pas traduit.",
+        "submit": "Terminer le bon",
+        "done": "{number} terminé, {minutes} min consignées."
+      },
+      "assign": {
+        "title": "Assigner {number}",
+        "description": "Choisissez à qui ce travail appartient. La personne en est avisée et le bon passe à Assigné.",
+        "assignee": "Assigner à",
+        "choose": "Choisissez une personne",
+        "atThisSite": "Sur ce site",
+        "elsewhere": "Autres sites",
+        "submit": "Assigner",
+        "done": "{number} assigné à {name}",
+        "notAssignableHint": "Non affichés : {roles}. Ce rôle ne peut rien modifier; on ne lui attribue donc pas de travail."
+      },
+      "cancel": {
+        "title": "Annuler {number}",
+        "description": "L’annulation est consignée avec votre motif et ne peut pas être défaite.",
+        "reason": "Pourquoi est-il annulé?",
+        "note": "Quelque chose à ajouter?",
+        "noteHint": "Facultatif. Le motif ci-dessus est le registre; ceci en est le détail.",
+        "submit": "Annuler le bon",
+        "done": "{number} annulé."
+      },
+      "logTime": {
+        "title": "Consigner du temps sur {number}",
+        "description": "Consigné à votre nom. Ceci ne change pas le statut.",
+        "submit": "Consigner",
+        "done": "{minutes} min consignées sur {number}."
+      },
+      "tasks": {
+        "toggleHint": "Cocher consigne votre nom et l’heure."
+      },
+      "refused": "Ce bon ne peut pas faire ce passage depuis {status}.",
+      "issuePart": {
+        "action": "Sortir une pièce",
+        "title": "Sortir une pièce pour {number}",
+        "description": "La pièce sort du magasin et le mouvement est consigné sur ce bon.",
+        "part": "Quelle pièce?",
+        "option": "{partNumber} — {name} ({onHand} en stock)",
+        "quantity": "Combien?",
+        "submit": "Sortir",
+        "done": "{quantity} × {partNumber} sortie pour {number}",
+        "noneInStock": "Aucun article de ce magasin n’a de stock disponible.",
+        "onHand": "{onHand} en stock"
+      }
+    }
+  },
+  "offlineRefusal": {
+    "title": "Vous êtes hors ligne",
+    "body": "Cet écran n’a pas été ouvert sur cet appareil : il n’en existe donc aucune copie à afficher ici.",
+    "stillWorks": "Tout ce qui est déjà ouvert fonctionne toujours. Toute modification est enregistrée sur cet appareil et envoyée au retour de la connexion.",
+    "back": "Retour"
+  },
+  "offline": {
+    "title": "Fonctionnement hors ligne",
+    "body": "Les modifications sont enregistrées sur cet appareil et envoyées au retour de la connexion.",
+    "pending": "{count, plural, =0 {Rien à envoyer} one {# modification à envoyer} other {# modifications à envoyer}}",
+    "pendingUnknown": "Vérification de ce qui reste à envoyer",
+    "syncTitle": "Synchronisation",
+    "syncBody": "Ce qui a été envoyé depuis le début de la démonstration, le plus récent en premier.",
+    "syncEmptyTitle": "Rien n’a encore été envoyé",
+    "syncEmptyBody": "Les modifications faites ici apparaissent une fois parvenues au serveur.",
+    "outcome": {
+      "applied": "Envoyée",
+      "conflicted": "Refusée, deux versions",
+      "keptMine": "Version de cet appareil conservée",
+      "keptTheirs": "Version du serveur conservée"
+    },
+    "conflictTitle": "Deux versions de la fiche {record}",
+    "conflictBody": "Cette modification a été faite ici hors ligne. Le serveur en avait déjà une autre. Rien n’est envoyé tant que vous n’avez pas choisi.",
+    "conflictMine": "Sur cet appareil",
+    "conflictTheirs": "Sur le serveur",
+    "conflictMineDetail": "Votre modification, faite hors ligne",
+    "conflictTheirsDetail": "À {at}, {who} l’a réglé à {status}",
+    "conflictKeepMine": "Conserver la version de cet appareil",
+    "conflictKeepTheirs": "Conserver la version du serveur",
+    "simulated": "Le serveur de cette démonstration est simulé.",
+    "queueLink": "Voir ce qui est en attente",
+    "queueEmptyOfflineTitle": "Rien n’est encore en attente",
+    "queueEmptyOfflineBody": "Vous travaillez hors ligne. Toute modification faite maintenant est enregistrée sur cet appareil et figure ici jusqu’au retour de la connexion.",
+    "queueStopped": "Rien d’autre n’est envoyé tant que les deux versions de la fiche {record} ne sont pas réglées.",
+    "queuedWhileOffline": "Enregistrée hors ligne",
+    "queuedByRole": "Enregistrée par : {role}",
+    "queueLastTitle": "Ce qui s’est passé en dernier",
+    "unreadableChange": "Une modification a été consignée"
+  },
+  "import": {
+    "title": "Importer depuis MP2",
+    "description": "Reprendre les équipements, les pièces et les bons de travail depuis une exportation de tableur.",
+    "open": "Importer depuis MP2",
+    "stepOf": "Étape {current} sur {total}",
+    "back": "Retour",
+    "next": "Continuer",
+    "steps": {
+      "upload": "Choisir un fichier",
+      "map": "Associer les colonnes",
+      "report": "Vérifier les données",
+      "preview": "Examiner avant de valider",
+      "commit": "Valider"
+    },
+    "upload": {
+      "title": "Choisir un tableur",
+      "body": "Une exportation .xlsx de MP2, avec un onglet pour les équipements, un pour les pièces et un pour les bons de travail.",
+      "action": "Choisir un fichier",
+      "reading": "Lecture du fichier…",
+      "unreadableTitle": "Ce fichier n’a pas pu être lu",
+      "unreadableBody": "Ce n’est pas un tableur que nous pouvons ouvrir, ou il est endommagé. Exportez-le de nouveau.",
+      "noSheetsTitle": "Aucun onglet reconnu",
+      "noSheetsBody": "Ce fichier n’a aucun onglet nommé pour les équipements, les pièces ou les bons de travail. Vérifiez qu’il s’agit bien de l’exportation MP2.",
+      "found": "{sheets} onglets, {rows} lignes",
+      "sheetRows": "{rows} lignes"
+    },
+    "map": {
+      "title": "Associer les colonnes",
+      "body": "La plupart des colonnes sont associées par leur nom. Celles ci-dessous ne le sont pas, car MP2 les nomme différemment d’une installation à l’autre.",
+      "column": "Colonne du fichier",
+      "field": "Champ WorkAxis",
+      "unmapped": "Non associée",
+      "ignore": "Ne pas importer",
+      "required": "Obligatoire",
+      "allMatched": "Toutes les colonnes sont associées.",
+      "stillNeeded": "{count} restent à associer",
+      "blockedTitle": "Une colonne obligatoire n’a rien derrière elle",
+      "blockedBody": "L’importation ne peut pas démarrer tant qu’un champ obligatoire n’a pas de colonne."
+    },
+    "report": {
+      "title": "Ce qui cloche dans ces données",
+      "body": "Relevé en lisant chaque ligne. Rien n’a encore été écrit.",
+      "cleanTitle": "Rien à signaler",
+      "cleanBody": "Toutes les lignes se lisent correctement. Vous pouvez passer directement à l’aperçu.",
+      "notRunTitle": "Pas encore vérifié",
+      "notRunBody": "Associez d’abord les colonnes, puis les lignes seront lues.",
+      "rowsAffected": "{rows} lignes à signaler",
+      "blocking": "{count} ne peuvent pas être importées",
+      "recoverable": "{count} seront importées, avec une note",
+      "sheet": "Onglet",
+      "row": "Ligne",
+      "column": "Colonne",
+      "problem": "Problème",
+      "fixAction": "Corriger cette ligne",
+      "fixLabel": "Valeur de remplacement pour {column}, ligne {row}",
+      "fixSave": "Utiliser cette valeur",
+      "fixCancel": "Laisser tel quel",
+      "fixed": "Ligne {row} mise à jour. Les lignes ont été relues.",
+      "blockingBadge": "Non importable",
+      "recoverableBadge": "Importée quand même"
+    },
+    "preview": {
+      "title": "Ce qui sera créé",
+      "body": "Rien n’est écrit tant que vous ne validez pas.",
+      "assets": "Équipements",
+      "parts": "Pièces",
+      "workOrders": "Bons de travail",
+      "assignments": "Affectations",
+      "total": "{count} fiches en tout",
+      "blocked": "{count} lignes écartées",
+      "emptyTitle": "Rien ne serait créé",
+      "emptyBody": "Chaque ligne est soit écartée, soit déjà présente. Il n’y a rien à valider.",
+      "noResultsTitle": "Aucune correspondance",
+      "noResultsBody": "Aucune fiche de cet aperçu ne correspond à la recherche.",
+      "caption": "Les fiches que cette importation créerait",
+      "identifier": "Identifiant",
+      "name": "Nom",
+      "kind": "Type",
+      "place": "Emplacement",
+      "noTimeLogged": "Aucun temps inscrit",
+      "timeNote": "Les bons de travail importés arrivent sans aucun temps inscrit."
+    },
+    "commit": {
+      "title": "Valider l’importation",
+      "body": "{count} fiches seront écrites, en un seul changement, avec une seule entrée au journal.",
+      "action": "Valider {count} fiches",
+      "working": "Écriture…",
+      "doneTitle": "Importé",
+      "doneBody": "{count} fiches depuis {fileName}.",
+      "undo": "Annuler cette importation",
+      "undoing": "Annulation…",
+      "undoneTitle": "Importation annulée",
+      "undoneBody": "Les {count} fiches qu’elle avait créées ont été retirées.",
+      "failedTitle": "Rien n’a été écrit",
+      "failedBody": "L’importation a été refusée et les fiches sont exactement telles qu’elles étaient."
+    },
+    "issue": {
+      "missingRequired": "Cette colonne est vide, alors qu’elle est obligatoire",
+      "duplicateKey": "{value} apparaît plus d’une fois",
+      "unknownAsset": "Aucun équipement ici ne s’appelle {tag}",
+      "unreadableDate": "{raw} n’est pas une date lisible",
+      "completedInFuture": "Terminé, avec une date d’achèvement dans le futur : {date}",
+      "negativeQuantity": "Un compte ne peut pas être inférieur à zéro : {value}",
+      "unknownSite": "{code} se trouve sur un site qui n’existe pas",
+      "notANumber": "{raw} n’est pas un nombre",
+      "unmatchedCrewCode": "Personne ici ne répond à {code}; le bon arrivera non affecté",
+      "cancelledWithoutReason": "Annulé, sans motif dans la source; ce sera inscrit tel quel"
+    }
+  },
+  "emailLog": {
+    "title": "Journal des courriels",
+    "description": "Ce que cette démonstration aurait envoyé, à qui et dans quelle langue. Rien n’est envoyé : la démonstration n’a pas de serveur de courriel, et ceci est la trace de la décision.",
+    "emptyTitle": "Aucun courriel n’aurait encore été envoyé",
+    "emptyBody": "Une ligne apparaît ici chaque fois qu’une alerte est produite pour une personne qui la souhaite par courriel.",
+    "columns": {
+      "queuedAt": "Quand",
+      "to": "Destinataire",
+      "language": "Langue",
+      "subject": "Objet"
+    },
+    "languageNote": "Rédigé dans la langue du destinataire, pas dans celle du lecteur",
+    "phaseTwo": "La phase 2 les envoie pour de vrai. Les écrans ne changent pas."
+  },
+  "myNotifications": {
+    "title": "Mes notifications",
+    "description": "Choisissez ce dont vous voulez être informé, et comment. Ces choix sont les vôtres et ceux de personne d’autre.",
+    "inApp": "Dans l’application",
+    "email": "Par courriel",
+    "kindColumn": "Alerte",
+    "readOnlyTitle": "Un auditeur consulte et ne modifie pas les réglages",
+    "readOnlyBody": "Les interrupteurs restent visibles pour que la règle se voie au lieu d’être cachée. Le rôle d’un auditeur est de consulter les enregistrements et la trace; rien ne peut être modifié ici.",
+    "languageLabel": "Les courriels seraient rédigés en",
+    "savedToast": "Vos choix ont été enregistrés"
+  },
+  "roleTable": {
+    "title": "Ce que chaque rôle peut faire",
+    "description": "La même règle que suivent les boutons, lue en travers. Un crochet indique ce que le rôle peut faire; une case vide, une commande qu’il voit, désactivée, avec la raison.",
+    "readsOnly": "Consultation seulement",
+    "capability": {
+      "workOrder": {
+        "create": "Ouvrir un bon de travail",
+        "assign": "Assigner des travaux à quelqu’un",
+        "complete": "Terminer un travail",
+        "cancel": "Annuler un travail"
+      },
+      "asset": {
+        "edit": "Modifier un équipement"
+      },
+      "document": {
+        "attach": "Joindre un document ou une photo"
+      },
+      "inspection": {
+        "complete": "Consigner une inspection"
+      },
+      "inventory": {
+        "issue": "Sortir une pièce pour un travail",
+        "adjust": "Corriger un décompte de stock"
+      },
+      "plan": {
+        "edit": "Modifier un plan d’entretien"
+      },
+      "users": {
+        "manage": "Modifier le rôle ou le site d’une personne, ou sa présence"
+      },
+      "settings": {
+        "manage": "Modifier les règles suivies par l’application"
+      },
+      "demo": {
+        "reset": "Réinitialiser la démonstration"
+      }
+    },
+    "caption": "Ce que chaque rôle peut faire. Un crochet indique une action permise; un tiret indique une commande visible, désactivée, avec la raison.",
+    "capabilityColumn": "Action",
+    "may": "Permis",
+    "mayNot": "Non permis"
+  },
+  "trades": {
+    "general": "Entretien général",
+    "hvac": "Chauffage, ventilation et climatisation",
+    "electrical": "Électricité",
+    "controls": "Contrôles et instrumentation",
+    "inspection": "Inspection"
+  },
+  "peopleTable": {
+    "caption": "Les personnes de l’organisation, avec le site de rattachement de chacune.",
+    "searchLabel": "Rechercher une personne",
+    "searchPlaceholder": "Nom, numéro d’employé, courriel ou site",
+    "readsOnly": "consultation seulement",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "siteUnknown": "Site introuvable",
+    "columns": {
+      "name": "Nom",
+      "employeeNumber": "Nº d’employé",
+      "role": "Rôle",
+      "site": "Site",
+      "state": "État",
+      "email": "Courriel",
+      "trades": "Métiers",
+      "manage": "Gestion"
+    }
+  },
+  "users": {
+    "invite": {
+      "label": "Inviter une personne",
+      "unavailable": "Les invitations arriveront avec l’authentification réelle, à la phase 2."
+    }
+  },
+  "organizationProfile": {
+    "title": "Organisation",
+    "description": "L’organisation visée par cette démonstration et les sites qu’elle couvre. Consultation seulement à la phase 1.",
+    "name": "Nom",
+    "code": "Code",
+    "siteCount": "Sites",
+    "cityProvince": "{city} ({province})",
+    "columns": {
+      "code": "Code",
+      "site": "Site",
+      "city": "Emplacement"
+    }
+  },
+  "workflowRules": {
+    "title": "Règles des bons de travail",
+    "description": "Les changements d’état permis ici et ce qu’exige la fin d’un travail. Une règle modifiée s’applique immédiatement et est consignée dans le journal.",
+    "readOnly": "Votre rôle peut consulter ces règles, sans les modifier.",
+    "requireNote": "Exiger une note à la fin d’un travail",
+    "waitingForParts": "Utiliser l’étape En attente de pièces",
+    "movesCaption": "Tous les changements d’état possibles et leur autorisation ici.",
+    "move": "{from} vers {to}",
+    "targets": "Cibles par priorité",
+    "targetsNote": "Affichées près de la priorité pour indiquer l’attente. Rien n’est encore mesuré par rapport à elles.",
+    "targetFor": "Cible pour {priority}, en heures",
+    "columns": {
+      "move": "Changement",
+      "allowed": "Permis"
+    }
+  },
+  "notificationDefaults": {
+    "title": "Notifications par défaut",
+    "description": "Ce qu’une personne reçoit avant de faire ses propres choix. Ce sont des points de départ : les choix de chacun lui appartiennent et ne sont pas modifiés ici.",
+    "readOnly": "Votre rôle peut consulter ces valeurs, sans les modifier.",
+    "columns": {
+      "kind": "Sujet"
+    }
+  },
+  "managePeople": {
+    "action": "Modifier",
+    "title": "Modifier une personne",
+    "description": "{name} : son rôle, son site et sa présence dans l’organisation.",
+    "role": "Rôle",
+    "site": "Site de rattachement",
+    "active": "Toujours dans l’organisation",
+    "activeHint": "Une personne qui ne l’est plus ne se voit plus confier de travaux et disparaît des listes d’attribution.",
+    "save": "Enregistrer",
+    "saved": "Enregistré",
+    "nothingChanged": "Aucun changement"
+  }
+}

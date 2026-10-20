@@ -1,0 +1,251 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * WorkAxis design tokens.
+ *
+ * The palette is a deep petrol green taken from laboratory casework and
+ * instrument enclosures, on a paper grey canvas. It is deliberately not the
+ * default enterprise blue. Status colours are a separate, signal-only set and
+ * are never the sole carrier of meaning: every status is a colour plus an icon
+ * plus a text label (see `StatusChip`).
+ *
+ * Documented in docs/DESIGN_SYSTEM.md. Change tokens there and here together.
+ */
+
+@theme inline {
+  /* Typefaces. IBM Plex was drawn for technical and engineering contexts and
+     covers French diacritics; the mono cut carries identifiers (asset tags,
+     work-order numbers) the way a nameplate does. */
+  --font-sans: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", monospace;
+  --font-heading: var(--font-sans);
+
+  /* Type scale tuned for dense operational tables: 13px rows, 14px body. */
+  --text-2xs: 0.6875rem;
+  --text-2xs--line-height: 1.4;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1.45;
+  --text-sm: 0.8125rem;
+  --text-sm--line-height: 1.5;
+  --text-base: 0.875rem;
+  --text-base--line-height: 1.55;
+  --text-lg: 1rem;
+  --text-lg--line-height: 1.45;
+  --text-xl: 1.125rem;
+  --text-xl--line-height: 1.35;
+  --text-2xl: 1.375rem;
+  --text-2xl--line-height: 1.25;
+  --text-3xl: 1.75rem;
+  --text-3xl--line-height: 1.2;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-muted: var(--sidebar-muted);
+
+  /* Signal set. Paired with an icon and a label, never used alone. */
+  --color-status-neutral: var(--status-neutral);
+  --color-status-info: var(--status-info);
+  --color-status-attention: var(--status-attention);
+  --color-status-waiting: var(--status-waiting);
+  --color-status-positive: var(--status-positive);
+  --color-status-quiet: var(--status-quiet);
+  --color-status-critical: var(--status-critical);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  /* Surfaces */
+  --background: #f4f6f5;
+  --foreground: #0f1c1b;
+  --card: #ffffff;
+  --card-foreground: #0f1c1b;
+  --popover: #ffffff;
+  --popover-foreground: #0f1c1b;
+
+  /* Structure */
+  --primary: #0f4340;
+  --primary-foreground: #ffffff;
+  --secondary: #e6efed;
+  --secondary-foreground: #0c2e2b;
+  --muted: #edf0ee;
+  --muted-foreground: #56635f;
+  --accent: #e6efed;
+  --accent-foreground: #0c2e2b;
+  --destructive: #a32027;
+  --border: #d5dbd8;
+  --input: #c7d0cc;
+  --ring: #12534f;
+
+  --radius: 0.25rem;
+
+  /* Navigation rail: dark so the data area stays the brightest surface. */
+  --sidebar: #0c2e2b;
+  --sidebar-foreground: #e8efed;
+  --sidebar-muted: #9fb3af;
+  --sidebar-primary: #e6efed;
+  --sidebar-primary-foreground: #0c2e2b;
+  --sidebar-accent: #16423e;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #1d4a46;
+  --sidebar-ring: #cfdcd9;
+
+  /* Signal set. Every value is AA against white for normal text. */
+  --status-neutral: #475a67;
+  --status-info: #1a4f87;
+  --status-attention: #8a5300;
+  --status-waiting: #5b3fa0;
+  --status-positive: #1a6b3c;
+  --status-quiet: #5e6866;
+  --status-critical: #a32027;
+
+  --chart-1: #0f4340;
+  --chart-2: #1a4f87;
+  --chart-3: #8a5300;
+  --chart-4: #5b3fa0;
+  --chart-5: #56635f;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-background text-base text-foreground;
+  }
+
+  /* Figures line up in columns so a technician can compare them by eye. */
+  :where(td, th, .tabular) {
+    font-variant-numeric: tabular-nums;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold tracking-tight;
+    text-wrap: balance;
+  }
+
+  /* Keyboard focus must be visible on every interactive element, including the
+     ones that are not shadcn components. Inside the dark rail the ring flips
+     to a light value so it stays visible. */
+  a:focus-visible,
+  summary:focus-visible,
+  [tabindex]:not([tabindex="-1"]):focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  [data-slot="sidebar-inner"] a:focus-visible,
+  [data-slot="sidebar-inner"] [tabindex]:focus-visible {
+    outline-color: var(--sidebar-ring);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * Printing a label.
+ *
+ * A label goes on a machine. What comes out of the printer has to be the
+ * label and nothing else — no shell, no navigation, no page heading — and it
+ * has to be the size it claims to be, which is why the label itself is laid
+ * out in millimetres rather than pixels.
+ *
+ * Done by hiding everything and un-hiding the print region rather than by
+ * restyling the shell, so a screen that grows a new header later still prints
+ * one label.
+ */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  [data-print-region],
+  [data-print-region] * {
+    visibility: visible;
+  }
+
+  [data-print-region] {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  [data-print-hidden] {
+    display: none !important;
+  }
+
+  /* Codes are read by a machine: never let a colour profile lighten them. */
+  [data-label] {
+    background: #fff;
+    color: #000;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+    break-inside: avoid;
+  }
+
+  @page {
+    margin: 8mm;
+  }
+}

@@ -1,0 +1,121 @@
+WO_NO,EQUIP_NO,WO_TYPE,PRIORITY,DATE_REQUESTED,DATE_DUE,DATE_COMPLETED,STATUS,ASSIGNED_TO,DESCRIPTION
+WO-100001,EWS-KAM-01,PM,2,2026-02-10,2026-09-28,,ASSGN,TECH10,Annual preventive maintenance and performance verification
+WO-100002,CTW-SUD-01,PM,2,2026-03-24,2026-04-23,2026-04-22,COMP,ELEC01,Semi-annual filter change and belt inspection
+WO-100003,VAC-KGN-01,PM,2,2025-08-26,2026-02-14,,WMATL,TECH10,Monthly lubrication and vibration check
+WO-100004,EXF-SUD-02,PM,4,2026-01-12,2026-01-26,2026-01-23,COMP,TECH07,Annual preventive maintenance and performance verification
+WO-100005,FMH-KGN-02,CM,4,2025-11-30,2026-09-15,,OPEN,ELEC02,"Unit short cycling, investigate and repair"
+WO-100006,AHU-REG-03,CM,2,2025-10-30,2026-09-19,,WMATL,ELEC03,"Unit short cycling, investigate and repair"
+WO-100007,CLD-MCT-01,PM,1,2025-12-21,2026-09-16,,OPEN,TECH06,Coil cleaning and condensate drain flush
+WO-100008,GEN-KGN-01,PM,3,2025-04-24,2026-08-22,,OPEN,HVAC04,Monthly lubrication and vibration check
+WO-100009,ELV-SUD-02,CAL,4,2025-06-05,2026-01-19,,INPRG,HVAC01,Pressure sensor calibration to reference standard
+WO-100010,GLW-KGN-02,INSP,2,2026-04-17,2026-05-17,2026-05-18,COMP,ELEC02,Monthly visual safety inspection
+WO-100011,FMH-REG-02,CM,4,2025-07-04,2025-08-18,2025-08-15,COMP,ELEC03,Water leak reported at base of unit
+WO-100012,CHL-KAM-03,CM,4,2025-09-29,2026-09-22,,WMATL,TECH10,"Temperature out of range, recalibrate controls and repair"
+WO-100013,EXF-SUD-01,PM,3,2025-05-24,2025-08-07,,OPEN,ELEC01,Semi-annual filter change and belt inspection
+WO-100014,FMH-KGN-01,PM,2,2025-09-12,2025-10-03,2025-10-04,COMP,TECH09,Quarterly preventive maintenance per manufacturer checklist
+WO-100015,FAP-KGN-02,CM,4,2025-12-26,2026-01-09,2026-01-04,COMP,ELEC03,"Unit short cycling, investigate and repair"
+WO-100016,GLW-REG-02,CAL,3,2025-07-07,2026-07-17,,OPEN,TECH01,Annual calibration of temperature monitoring
+WO-100017,BSC-KAM-02,PM,3,2025-10-26,2026-09-29,,OPEN,TECH02,Annual preventive maintenance and performance verification
+WO-100018,ULF-MCT-01,CM,3,2025-12-04,2025-12-11,,CANC,TECH03,"Temperature out of range, recalibrate controls and repair"
+WO-100019,GLW-KGN-01,PM,4,2025-10-05,2026-09-29,,OPEN,TECH02,Quarterly preventive maintenance per manufacturer checklist
+WO-100020,FMH-REG-01,PM,4,2025-10-31,2025-11-03,2025-11-04,COMP,TECH04,Semi-annual filter change and belt inspection
+WO-100021,INC-KGN-02,CM,3,2026-07-20,2026-08-03,2026-08-02,COMP,TECH10,Excessive noise and vibration during operation
+WO-100022,AHU-KGN-99,PM,2,2026-05-05,2026-12-09,,OPEN,HVAC03,Annual preventive maintenance and performance verification
+WO-100023,EWS-KAM-03,CM,2,2025-08-13,2026-05-14,,INPRG,HVAC04,Excessive noise and vibration during operation
+WO-100024,RFR-SUD-01,SAF,2,2025-11-14,2025-11-17,2025-11-16,COMP,TECH10,Eyewash and shower flow test and flush
+WO-100025,GLW-REG-01,PM,4,2026-04-30,2026-05-10,2026-05-15,COMP,TECH09,Semi-annual filter change and belt inspection
+WO-100026,VAC-REG-01,CM,3,2026-03-16,2026-04-30,2026-03-28,COMP,HVAC01,"Unit short cycling, investigate and repair"
+WO-100027,INC-REG-02,EM,1,2026-06-10,2026-06-17,,CANC,HVAC04,"Power fault on critical circuit, emergency repair"
+WO-100028,UPS-KAM-02,PM,3,2026-08-22,2026-10-25,,INPRG,TECH10,Annual preventive maintenance and performance verification
+WO-100029,CLD-MCT-03,INSP,4,2026-09-06,2026-09-27,2026-09-10,COMP,HVAC01,Monthly visual safety inspection
+WO-100030,INC-KGN-01,PM,3,2025-10-01,2025-10-08,2025-10-10,COMP,TECH01,Quarterly preventive maintenance per manufacturer checklist
+WO-100031,GEN-REG-01,CM,3,2025-09-27,2026-09-24,,OPEN,TECH04,Excessive noise and vibration during operation
+WO-100032,AHU-REG-02,PM,3,2025-09-02,2025-09-12,,CANC,TECH02,Semi-annual filter change and belt inspection
+WO-100033,CTF-KAM-02,PM,2,2026-05-24,2026-11-16,,INPRG,TECH04,Annual preventive maintenance and performance verification
+WO-100034,ATS-MCT-02,PM,2,2026-02-02,2026-09-26,,INPRG,TECH09,Monthly lubrication and vibration check
+WO-100035,ELV-SUD-01,CM,3,2026-06-18,2026-06-25,2026-06-27,COMP,TECH07,Water leak reported at base of unit
+WO-100036,INC-REG-01,PM,3,2025-10-02,2025-11-16,2025-11-15,COMP,TECH12,Coil cleaning and condensate drain flush
+WO-100037,UPS-KAM-01,PM,1,2026-04-09,2026-04-23,2026-04-19,COMP,TECH07,Annual preventive maintenance and performance verification
+WO-100038,FAP-REG-02,SAF,2,2025-11-29,2025-12-02,2025-12-02,COMP,TECH10,Life safety device functional test
+WO-100039,LN2-KAM-02,PM,3,2025-10-29,2025-12-13,2025-12-01,COMP,HVAC04,Monthly lubrication and vibration check
+WO-100040,ULF-MCT-03,CAL,3,2026-04-12,2026-05-03,2026-04-22,COMP,TECH01,Annual calibration of temperature monitoring
+WO-100041,FAP-KGN-01,CM,2,2025-10-17,2025-10-24,2025-10-29,COMP,TECH04,"Control panel showing fault code, diagnose and clear"
+WO-100042,CTF-KAM-01,CM,2,2026-01-31,2026-03-17,2026-03-20,COMP,CONT01,"Temperature out of range, recalibrate controls and repair"
+WO-100043,BSC-KAM-01,CM,2,2025-12-10,12/24/2025,,WMATL,TECH05,"Control panel showing fault code, diagnose and clear"
+WO-100044,SPR-KAM-02,CM,2,2026-07-01,2026-07-15,2026-07-18,COMP,ELEC02,"Temperature out of range, recalibrate controls and repair"
+WO-100045,HFU-MCT-02,PM,2,2026-02-17,2026-11-21,,INPRG,TECH03,Semi-annual filter change and belt inspection
+WO-100046,RFR-SUD-03,INSP,3,2026-02-11,2026-02-14,2026-02-16,COMP,HVAC01,Monthly visual safety inspection
+WO-100047,FAP-REG-01,PM,1,2025-11-21,2026-09-22,,INPRG,TECH06,Monthly lubrication and vibration check
+WO-100048,LN2-KAM-01,PM,3,2025-05-27,2025-07-11,2025-06-09,COMP,HVAC02,Semi-annual filter change and belt inspection
+WO-100049,EWS-KAM-02,INSP,3,2026-04-21,2026-04-24,2026-04-27,COMP,HVAC01,Third party certification inspection
+WO-100050,ATS-MCT-01,PM,2,2026-07-17,2026-11-17,,INPRG,TECH06,Coil cleaning and condensate drain flush
+WO-100051,DHU-SUD-02,INSP,3,2025-10-31,2026-09-27,,INPRG,TECH07,Annual regulatory inspection and certification
+WO-100052,AHU-KGN-01,PM,3,2026-08-04,2026-10-30,,OPEN,HVAC03,Annual preventive maintenance and performance verification
+WO-100053,SPR-KAM-01,CM,3,2025-05-05,2025-06-03,,INPRG,TECH07,"Temperature out of range, recalibrate controls and repair"
+WO-100054,HFU-MCT-01,INSP,3,2026-04-30,2026-10-18,,WMATL,CONT01,Third party certification inspection
+WO-100055,CLD-MCT-02,CM,3,2026-01-16,2026-01-19,2026-01-19,COMP,ELEC01,"Temperature out of range, recalibrate controls and repair"
+WO-100056,AUT-SUD-02,CAL,3,2026-07-05,2026-07-08,2026-07-14,COMP,TECH04,Pressure sensor calibration to reference standard
+WO-100057,BSC-HAL-01,PM,2,2025-07-13,2026-07-26,,WMATL,TECH08,Semi-annual filter change and belt inspection
+WO-100058,AHU-REG-01,PM,4,2026-05-14,2026-05-21,2026-05-21,COMP,HVAC03,Quarterly preventive maintenance per manufacturer checklist
+WO-100059,BLR-MCT-01,CAL,3,2025-05-17,2025-06-07,2025-05-26,COMP,TECH07,Pressure sensor calibration to reference standard
+WO-100060,ATS-MCT-01,PM,3,2026-04-29,2026-10-21,,ASSGN,TECH11,Coil cleaning and condensate drain flush
+WO-100061,BLR-MCT-02,PM,2,2025-08-27,2026-09-28,,ASSGN,HVAC01,Semi-annual filter change and belt inspection
+WO-100062,CMP-SUD-02,PM,3,2025-11-13,2026-09-29,,ASSGN,HVAC02,Semi-annual filter change and belt inspection
+WO-100063,FAP-KGN-03,PM,2,2025-12-08,2026-09-21,,ASSGN,ELEC02,Monthly lubrication and vibration check
+WO-100064,CHL-KAM-01,INSP,2,2025-10-07,2025-10-10,2025-10-14,COMP,TECH07,Monthly visual safety inspection
+WO-100065,WPS-MCT-01,PM,3,2026-07-16,2026-11-18,,ASSGN,HVAC04,Annual preventive maintenance and performance verification
+WO-100066,ULF-MCT-02,PM,3,2025-08-28,2025-09-11,2025-09-12,COMP,ELEC03,Coil cleaning and condensate drain flush
+WO-100067,CTW-SUD-02,PM,2,2026-05-27,2026-07-11,2026-07-13,COMP,TECH04,Coil cleaning and condensate drain flush
+WO-100068,VAC-KGN-02,PM,4,2025-04-19,2026-02-27,,OPEN,TECH12,Coil cleaning and condensate drain flush
+WO-100069,FAP-REG-03,CAL,3,2025-08-22,2025-09-17,,OPEN,TECH04,Airflow calibration and face velocity verification
+WO-100070,BLR-MCT-01,PM,3,2026-05-11,2026-05-25,2026-05-27,COMP,TECH07,Annual preventive maintenance and performance verification
+WO-100071,CMP-SUD-01,CM,3,2025-05-15,2025-05-29,2025-05-23,COMP,TECH04,"Unit short cycling, investigate and repair"
+WO-100072,RFR-SUD-02,INSP,3,2025-08-11,2026-09-08,,INPRG,TECH04,Containment integrity inspection and airflow survey
+WO-100073,GEN-KGN-02,INSP,2,2026-07-13,2026-08-03,2026-07-31,COMP,TECH04,Third party certification inspection
+WO-100074,AHU-KGN-03,EM,1,2026-03-08,2026-03-11,2026-03-10,COMP,ELEC01,Complete loss of airflow to containment area
+WO-100075,EWS-KAM-01,CM,3,2026-05-10,2026-05-17,2029-06-08,COMP,TECH08,Excessive noise and vibration during operation
+WO-100076,CTW-SUD-01,PM,3,2025-07-10,2025-07-17,2025-07-13,COMP,ELEC02,Annual preventive maintenance and performance verification
+WO-100077,VAC-KGN-01,INSP,4,2026-05-06,2026-10-27,,WMATL,HVAC04,Monthly visual safety inspection
+WO-100078,EXF-SUD-02,PM,2,2026-03-06,2026-12-03,,INPRG,HVAC02,Monthly lubrication and vibration check
+WO-100079,FMH-KGN-02,PM,4,2025-10-11,2025-10-14,2025-10-15,COMP,HVAC02,Coil cleaning and condensate drain flush
+WO-100080,AHU-REG-03,PM,3,2026-04-08,2026-04-22,2026-04-19,COMP,ELEC03,Annual preventive maintenance and performance verification
+WO-100081,CLD-MCT-01,PM,3,2026-03-29,2026-04-12,2026-04-02,COMP,TECH10,Monthly lubrication and vibration check
+WO-100082,GEN-KGN-01,EM,1,2025-04-10,2026-04-06,,OPEN,TECH05,"Alarm active, sample storage at risk, emergency response"
+WO-100083,ELV-SUD-02,CM,3,2025-04-13,2025-05-13,2025-05-01,COMP,HVAC04,"Temperature out of range, recalibrate controls and repair"
+WO-100084,GLW-KGN-02,INSP,4,2026-03-31,2026-04-21,2026-04-07,COMP,ELEC01,Monthly visual safety inspection
+WO-100085,FMH-REG-02,PM,4,2026-08-07,2026-08-28,2026-08-28,COMP,TECH03,Semi-annual filter change and belt inspection
+WO-100086,CHL-KAM-03,PM,3,2025-04-24,2026-03-25,,WMATL,TECH09,Monthly lubrication and vibration check
+WO-100087,EXF-SUD-01,CM,3,2025-07-28,2025-08-18,2025-08-20,COMP,TECH01,"Control panel showing fault code, diagnose and clear"
+WO-100088,FMH-KGN-01,SAF,2,2025-11-01,2026-09-19,,OPEN,TECH10,Life safety device functional test
+WO-100089,FAP-KGN-02,PM,3,2025-05-24,2025-06-03,2025-06-04,COMP,TECH09,Quarterly preventive maintenance per manufacturer checklist
+WO-100090,GLW-REG-02,CM,3,2025-04-13,2025-11-26,,ASSGN,HVAC01,"Temperature out of range, recalibrate controls and repair"
+WO-100091,BSC-KAM-02,PM,1,2025-07-14,2025-07-24,2025-07-29,COMP,HVAC04,Semi-annual filter change and belt inspection
+WO-100092,ULF-MCT-01,PM,4,2026-08-29,2026-10-13,,OPEN,TECH07,Annual preventive maintenance and performance verification
+WO-100093,GLW-KGN-01,INSP,3,2025-07-07,2025-07-16,,ASSGN,TECH06,Annual regulatory inspection and certification
+WO-100094,FMH-REG-01,SAF,2,2025-11-14,2026-09-24,,OPEN,CONT01,Eyewash and shower flow test and flush
+WO-100095,INC-KGN-02,CM,4,2025-06-02,2026-07-05,,ASSGN,TECH07,Water leak reported at base of unit
+WO-100096,GEN-REG-02,PM,3,2025-07-31,2025-12-11,,WMATL,HVAC04,Quarterly preventive maintenance per manufacturer checklist
+WO-100097,EWS-KAM-03,CM,1,2025-06-01,2026-02-11,,ASSGN,TECH12,Excessive noise and vibration during operation
+WO-100098,RFR-SUD-01,PM,4,2026-03-08,2026-10-08,,WMATL,TECH04,Monthly lubrication and vibration check
+WO-100099,GLW-REG-01,PM,3,2026-06-07,2026-10-07,,WMATL,HVAC03,Annual preventive maintenance and performance verification
+WO-100100,PMP-MCT-07,CAL,3,2025-04-18,2025-05-18,2025-05-13,COMP,ELEC01,Annual calibration of temperature monitoring
+WO-100101,INC-REG-02,PM,2,2026-03-08,2026-12-03,,WMATL,TECH05,Quarterly preventive maintenance per manufacturer checklist
+WO-100102,UPS-KAM-02,CM,2,2026-05-11,2026-11-20,,INPRG,HVAC04,Excessive noise and vibration during operation
+WO-100103,CLD-MCT-03,CM,2,2025-06-04,2025-06-14,2025-06-17,COMP,HVAC03,"Control panel showing fault code, diagnose and clear"
+WO-100104,INC-KGN-01,CM,2,2026-06-25,2026-07-09,2026-06-30,COMP,TECH03,"Control panel showing fault code, diagnose and clear"
+WO-100105,GEN-REG-01,PM,3,2025-08-06,2025-11-09,,OPEN,ELEC01,Monthly lubrication and vibration check
+WO-100106,AHU-REG-02,PM,3,2025-09-14,2026-09-27,,WMATL,TECH09,Annual preventive maintenance and performance verification
+WO-100107,CTF-KAM-02,PM,1,2026-07-01,2026-11-12,,ASSGN,TECH03,Annual preventive maintenance and performance verification
+WO-100108,ATS-MCT-02,PM,3,2026-07-06,2026-11-23,,OPEN,TECH02,Coil cleaning and condensate drain flush
+WO-100109,ELV-SUD-01,INSP,3,2025-05-14,2025-06-28,2025-05-21,COMP,TECH07,Third party certification inspection
+WO-100110,INC-REG-01,CAL,3,2025-09-30,2026-09-14,,INPRG,HVAC04,Pressure sensor calibration to reference standard
+WO-100111,UPS-KAM-01,PM,3,2025-10-28,2025-10-31,2025-11-06,COMP,HVAC04,Coil cleaning and condensate drain flush
+WO-100112,FAP-REG-02,CAL,3,2025-08-28,2026-09-28,,INPRG,TECH03,Annual calibration of temperature monitoring
+WO-100113,LN2-KAM-02,PM,4,2025-09-20,2025-11-04,2025-10-27,COMP,ELEC03,Quarterly preventive maintenance per manufacturer checklist
+WO-100114,ULF-MCT-03,SAF,2,2025-05-21,2025-11-13,,ASSGN,ELEC01,Life safety device functional test
+WO-100115,FAP-KGN-01,PM,2,2026-07-07,2026-07-21,2026-07-10,COMP,TECH11,Semi-annual filter change and belt inspection
+WO-100116,CTF-KAM-01,PM,3,2026-06-23,2026-06-26,2026-06-27,COMP,HVAC01,Annual preventive maintenance and performance verification
+WO-100117,BSC-KAM-01,PM,1,2026-06-19,2026-07-10,,CANC,TECH03,Semi-annual filter change and belt inspection
+WO-100118,SPR-KAM-02,CAL,3,2026-05-14,2026-05-21,2026-05-26,COMP,TECH02,Annual calibration of temperature monitoring
+WO-100119,HFU-MCT-02,CM,3,2026-04-29,2026-05-09,,CANC,TECH05,Excessive noise and vibration during operation
+WO-100120,RFR-SUD-03,CM,3,2026-02-24,2026-10-19,,WMATL,HVAC02,"Control panel showing fault code, diagnose and clear"

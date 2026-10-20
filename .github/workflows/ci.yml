@@ -1,0 +1,193 @@
+name: CI
+
+# A draft pull request does not spend the budget; marking it ready does.
+#
+# The account's Actions allowance runs out before the two weeks that decide
+# this bid, and a draft is pushed to many times a day while it is being worked
+# on. Every one of those pushes was buying a second opinion nobody had asked
+# for yet.
+#
+# What this does not change is where the evidence comes from. A lane runs
+# `npm run test:e2e -- --retries=0` locally before it pushes, and the reviewer
+# boots the branch from a fresh checkout — those are the measurements of
+# record, and they always were. **CI is the second opinion**, and it is now
+# spent on the pull requests somebody is actually asking to have read.
+#
+# `ready_for_review` is in the types on purpose. Without it, marking a draft
+# ready fires an event the default list ignores, so a pull request could reach
+# a reviewer having never run here at all. With it, the moment somebody asks
+# for the read is the moment the job runs.
+#
+# `push` to main keeps running unconditionally: what is on main is the one
+# thing nobody gets to opt out of checking.
+#
+# WHAT A DRAFT ACTUALLY DOES, MEASURED RATHER THAN REASONED. A draft push does
+# not fail to create a run. The trigger fires, the job's `if` below evaluates
+# false, and the run completes with conclusion `skipped`. PR #88
+# (`feat/WA-90-floor-map`) is a draft and its push produced run 35292954458 —
+# `event=pull_request`, `conclusion=skipped`, and the only run on that branch.
+#
+# An earlier version of this comment said to expect NO runs for a draft. That
+# was wrong, and wrong against the paragraph three above it, which says a
+# skipped job reports success on the pull request. Knowing the JOB is skipped
+# and then counting RUNS is the same mistake twice in one file, and the half a
+# person trusts in October is the checklist.
+#
+# THE MEASUREMENT IS THE COUNT OF RUNS WHOSE CONCLUSION IS NOT `skipped`. That
+# is what separates "nobody asked for this read" from "somebody asked and it
+# ran". `gh run list --json event` cannot substitute for it: opened,
+# synchronize and ready_for_review are all actions inside one `pull_request`
+# event, so that field reads `pull_request` whatever happened.
+#
+# MOST OF THIS IS OBSERVABLE NOW. A billing refusal does not stop a run being
+# created either — run 35284636831 on `feat/WA-88-assign-order` (PR #79) sits
+# at `conclusion=failure`, created and finished four seconds apart with no
+# steps. So only step 3's steps PASSING waits for the minutes to reset; its
+# trigger does not.
+#
+#   1. Open a throwaway draft pull request with a one-line change.
+#      Expect one run, conclusion `skipped`.
+#   2. Push a second commit to the draft. Expect a second `skipped` run.
+#   3. Mark it ready for review. Expect a new run whose conclusion is NOT
+#      `skipped` — today that is billing-refused (`failure`), after the reset
+#      it is the steps actually running. **If no new run appears at all,
+#      `ready_for_review` is not wired and the branch is hidden from CI**,
+#      which is the failure this whole change risks.
+#   4. Push a third commit while it is ready. Expect another non-skipped run,
+#      and the previous one cancelled if it was still going — the concurrency
+#      group.
+#   5. Convert it back to draft and push again. Expect a `skipped` run:
+#      `converted_to_draft` is not in the types, and the job condition skips a
+#      draft's `synchronize`. This is the one that catches the change being
+#      half applied, because steps 1 and 2 pass on a branch nothing is
+#      watching.
+#   6. Close the pull request and delete the branch.
+#
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  NEXT_TELEMETRY_DISABLED: "1"
+
+jobs:
+  verify:
+    name: Lint, types, unit tests, build, browser tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    # Drafts are skipped here rather than at the trigger, because a trigger
+    # cannot ask. GitHub has no `draft: false` filter on `pull_request`; the
+    # event carries the flag and a job condition is the only place to read it.
+    #
+    # A skipped job reports success on the pull request, which is the part to
+    # know rather than discover: a green tick on a draft means "not asked for"
+    # and not "checked". The tick that counts is the one after it is marked
+    # ready.
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Check formatting
+        run: npm run format:check
+
+      - name: Types
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Production build
+        run: npm run build
+
+      - name: Cache Playwright browsers
+        id: playwright-cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
+
+      - name: Browser and accessibility tests
+        run: npm run test:e2e
+
+      # The screenshot specs skip themselves unless WA_SCREENSHOTS is set, and
+      # nothing set it — so a green build on a pull request that changed only a
+      # screenshot spec meant the build had not looked at it. That is how
+      # WA-42's breakage reached main.
+      #
+      # The pictures go to a directory the runner throws away: what this step
+      # is for is whether the specs pass, and writing into docs/screenshots
+      # would make every legitimate regeneration a red build.
+      - name: Screenshot specs
+        run: npm run test:screenshots
+        env:
+          WA_SCREENSHOTS: "1"
+          WA_SCREENSHOT_ROOT: ${{ runner.temp }}/screenshots
+
+      # The four write instruments skip themselves unless WA_WRITE_INSTRUMENTS is
+      # set, which is the same shape that left the screenshot specs unrun for
+      # weeks: a gated spec nobody runs rots silently, and it rots in the worst
+      # way — nobody finds out until the defect recurs and the tool built to
+      # measure it no longer works.
+      #
+      # One cycle each, not forty. And WA_INSTRUMENT_SMOKE, because a rot-check
+      # must not assert the thing being measured: these instruments navigate
+      # before the change is flushed on purpose, so their survival verdict is
+      # expected to fail some of the time for ever, and asserting it here would
+      # turn main red at random. The floors are still asserted — the seed
+      # reached the database, the write happened, the readings are real — which
+      # is the whole surface on which an instrument rots.
+      - name: Write instruments
+        run: npm run test:write-instruments
+        env:
+          WA_WRITE_INSTRUMENTS: "1"
+          WA_INSTRUMENT_SMOKE: "1"
+
+      - name: Upload Playwright report
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 7
+
+      # The traces themselves, and they are a separate upload on purpose.
+      #
+      # Playwright writes a failing test's trace into `test-results/`, and the
+      # HTML report links to a copy of it. Uploading only the report makes the
+      # trace's survival depend on the reporter copying it — true today, and a
+      # thing to discover on the day somebody needs it rather than a thing to
+      # rely on. This path is where the runner puts them, whatever the reporter
+      # does with them afterwards.
+      #
+      # `if-no-files-found: ignore` because a failure in lint, types or the
+      # unit tests never reaches Playwright, and an upload step that fails the
+      # build for finding nothing would turn one red into two.
+      - name: Upload Playwright traces
+        if: ${{ failure() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-traces
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 7
